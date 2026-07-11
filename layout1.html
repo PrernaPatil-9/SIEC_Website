@@ -1,0 +1,2986 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    SIEC Water — Treat. Transform. Sustain. | Advanced Water & Wastewater
+    Solutions
+  </title>
+  <meta name="description"
+    content="SIEC Water delivers smart, integrated, and sustainable water treatment infrastructure — WTP, STP, ETP, ZLD systems — for industries, municipalities, and smart cities across India and globally." />
+  <meta name="keywords"
+    content="water treatment plant, sewage treatment, effluent treatment, ZLD, MBR, MBBR, SCADA water, sustainable water solutions, WTP STP ETP India" />
+  <meta property="og:title" content="SIEC Water — Treat. Transform. Sustain." />
+  <meta property="og:description"
+    content="Premium water and wastewater engineering for a sustainable future. WTP, STP, ETP, ZLD, and smart digital water infrastructure." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://siecwater.com/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ─── DESIGN TOKENS ─── */
+    :root {
+      --teal-900: #0a2e2e;
+      --teal-800: #0d3d3d;
+      --teal-700: #0f4d4d;
+      --teal-600: #1a6b6b;
+      --teal-500: #218f8f;
+      --teal-400: #2db5b5;
+      --teal-300: #5cd4d4;
+      --teal-200: #a0e8e8;
+      --teal-100: #d6f5f5;
+      --green-600: #2e7d50;
+      --green-500: #3a9d64;
+      --green-400: #5bbf82;
+      --green-300: #8dd4a8;
+      --sand: #f7f4ee;
+      --sand-dark: #ede8de;
+      --white: #ffffff;
+      --ink-900: #0c1a1a;
+      --ink-700: #1d3535;
+      --ink-500: #3a5555;
+      --ink-300: #7a9898;
+      --ink-100: #c2d5d5;
+      --accent-gold: #c8a96e;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "DM Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --section-px: clamp(1.5rem, 5vw, 6rem);
+      --section-py: clamp(5rem, 10vw, 10rem);
+    }
+
+    /* ─── RESET ─── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--sand);
+      color: var(--ink-900);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--teal-900);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--teal-400);
+      border-radius: 2px;
+    }
+
+    /* ─── CURSOR ─── */
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid var(--teal-400);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition:
+        transform 0.15s var(--ease-out-expo),
+        opacity 0.3s;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--teal-400);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s;
+    }
+
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    /* ─── LOADER ─── */
+    /* ==========================
+   LOADER
+========================== */
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+
+      background:
+        linear-gradient(rgba(0, 18, 26, 0.75), rgba(0, 18, 26, 0.75)),
+        url("/Images/loader.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+
+      animation:
+        loaderReveal 1.2s ease forwards,
+        floating 4s ease-in-out infinite;
+    }
+
+    .loader-logo {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      color: #fff;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .loader-logo span:last-child {
+      color: var(--teal-300);
+    }
+
+    .loader-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .loader-bar {
+      width: 240px;
+      height: 2px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .loader-bar-fill {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal-400), var(--teal-200));
+
+      animation: loadBar 1.8s ease forwards;
+    }
+
+    /* Content entrance */
+
+    @keyframes loaderReveal {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Floating effect */
+
+    @keyframes floating {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Progress bar */
+
+    @keyframes loadBar {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem var(--section-px);
+      transition: all 0.5s var(--ease-out-expo);
+    }
+
+    nav.scrolled {
+      background: rgba(10, 46, 46, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(45, 181, 181, 0.12);
+      padding: 1rem var(--section-px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-mark {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .nav-logo-mark .water {
+      color: var(--teal-300);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--teal-300);
+      transition: width 0.3s var(--ease-out-expo);
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--teal-400);
+      color: var(--teal-900) !important;
+      padding: 0.65rem 1.5rem;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      letter-spacing: 0.08em !important;
+      transition: all 0.3s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--teal-300) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--teal-900);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: var(--white);
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--teal-300);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: var(--section-px);
+      font-size: 2rem;
+      color: var(--white);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* =========================
+   HERO SECTION
+========================= */
+
+    #hero {
+      position: relative;
+      min-height: 82vh;
+      max-height: 760px;
+      background: var(--teal-900);
+      display: flex;
+      align-items: flex-start;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      color: var(--teal-200);
+      max-width: 920px;
+      padding: 4rem var(--section-px) 2rem;
+      margin-top: -10px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      line-height: 1.05;
+      color: var(--teal-400);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      max-width: 600px;
+      font-size: clamp(1rem, 1.6vw, 1.12rem);
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* =========================
+   PRIMARY BUTTON
+========================= */
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--teal-400);
+      color: var(--teal-900);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-300);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary svg {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* =========================
+   OUTLINE BUTTON
+========================= */
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 3px;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal-300);
+      color: var(--teal-300);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* =========================
+   HERO STATS
+========================= */
+
+    .hero-stats {
+      position: absolute;
+      right: var(--section-px);
+      bottom: 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      z-index: 10;
+    }
+
+    .stat-item {
+      text-align: right;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      color: var(--white);
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--teal-300);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-top: 0.35rem;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.12);
+      margin-left: auto;
+    }
+
+    /* =========================
+   TABLET
+========================= */
+
+    @media (max-width: 1024px) {
+      #hero {
+        min-height: 75vh;
+      }
+
+      .hero-content {
+        padding: 3.5rem var(--section-px) 2rem;
+      }
+
+      .hero-stats {
+        display: none;
+      }
+    }
+
+    /* =========================
+   MOBILE
+========================= */
+
+    @media (max-width: 768px) {
+      #hero {
+        min-height: 70vh;
+        max-height: none;
+        align-items: center;
+      }
+
+      .hero-content {
+        padding: 2rem 1.5rem;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* =========================
+   SMALL MOBILE
+========================= */
+
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.4rem, 10vw, 4rem);
+      }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section {
+      position: relative;
+    }
+
+    .section-pad {
+      padding: var(--section-py) var(--section-px);
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-label-line {
+      width: 30px;
+      height: 1px;
+      background: var(--teal-500);
+    }
+
+    .section-label span {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--teal-600);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink-900);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--teal-600);
+    }
+
+    .section-title-white {
+      color: var(--white);
+    }
+
+    .section-title-white em {
+      color: var(--teal-300);
+    }
+
+    .section-subtitle {
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      font-weight: 300;
+      color: var(--ink-500);
+      line-height: 1.8;
+      max-width: 640px;
+      margin-top: 1.5rem;
+    }
+
+    .section-subtitle-white {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* ─── ABOUT / MISSION ─── */
+    #about.section-pad {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    #about {
+      background: var(--sand);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-left {}
+
+    .about-right {
+      padding-top: 4rem;
+    }
+
+    .value-card {
+      border-left: 2px solid var(--teal-300);
+      padding: 1.5rem 0 1.5rem 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .value-card:hover {
+      border-color: var(--teal-500);
+    }
+
+    .value-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--teal-700);
+      margin-bottom: 0.5rem;
+    }
+
+    .value-card p {
+      font-size: 0.9rem;
+      color: var(--ink-500);
+      line-height: 1.7;
+    }
+
+    .about-callout {
+      background: var(--teal-900);
+      color: var(--white);
+      padding: 2.5rem;
+      border-radius: 4px;
+      margin-top: 3rem;
+    }
+
+    .about-callout-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--teal-300);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .about-callout p {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--white);
+    }
+
+    .about-callout em {
+      font-style: italic;
+      color: var(--teal-300);
+    }
+
+    /* ─────────────────────────────
+   WHY CHOOSE SECTION
+───────────────────────────── */
+
+    #why {
+      background: var(--teal-900);
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    /* Header Layout */
+    .why-header {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      /* gap: 3rem; */
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .why-heading {
+      max-width: 700px;
+    }
+
+    /* ─── STATS ─── */
+
+    .why-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stat-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-box:last-child {
+      border-bottom: none;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--white);
+      min-width: 90px;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--teal-300);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+
+    /* ─── GRID ─── */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      margin-top: 0;
+    }
+
+    /* ─── CARD ─── */
+
+    .why-card {
+      background: var(--teal-900);
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition:
+        background 0.4s ease,
+        transform 0.4s ease;
+    }
+
+    .why-card::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,
+          var(--teal-400),
+          var(--green-400));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out-expo);
+    }
+
+    .why-card:hover {
+      background: rgba(45, 181, 181, 0.05);
+      transform: translateY(-4px);
+    }
+
+    .why-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* ─── ICON ─── */
+
+    .why-icon {
+      width: 46px;
+      height: 46px;
+      background: rgba(45, 181, 181, 0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .why-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--teal-300);
+    }
+
+    /* ─── CARD CONTENT ─── */
+
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .why-card p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.58);
+      line-height: 1.65;
+    }
+
+    /* ─── TABLET ─── */
+
+    @media (max-width: 1024px) {
+
+      #why {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+      }
+
+      .why-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .why-stats {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .stat-box {
+        flex: 1;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        padding-right: 1rem;
+      }
+
+      .stat-box:last-child {
+        border-right: none;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ─── MOBILE ─── */
+
+    @media (max-width: 768px) {
+
+      #why {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .why-stats {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .stat-box {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1rem 0;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-card {
+        padding: 1.6rem;
+      }
+
+      .stat-number {
+        font-size: 2.2rem;
+        min-width: 75px;
+      }
+    }
+
+    /* ─── EXPERTISE ─── */
+    #expertise {
+      background: var(--sand);
+    }
+
+    .expertise-tabs {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--sand-dark);
+      margin: 3rem 0 0;
+    }
+
+    .tab-btn {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-300);
+      background: none;
+      border: none;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      color: var(--teal-600);
+      border-bottom-color: var(--teal-500);
+    }
+
+    .tab-btn:hover {
+      color: var(--teal-600);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 3rem 0;
+      align-items: start;
+    }
+
+    .expertise-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink-900);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .expertise-content h2 em {
+      font-style: italic;
+      color: var(--teal-600);
+    }
+
+    .expertise-content .lead {
+      font-size: 0.95rem;
+      color: var(--ink-500);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--ink-700);
+      font-weight: 500;
+    }
+
+    .service-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-400);
+      flex-shrink: 0;
+    }
+
+    .expertise-visual {
+      background: var(--teal-900);
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 380px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .expertise-visual-inner {
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .expertise-visual-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+
+    .expertise-visual-label {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--white);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    .expertise-visual-sub {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--teal-300);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+    }
+
+    /* ─── PROCESS ─── */
+    #process {
+      background: var(--ink-900);
+    }
+
+    .process-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    .process-track::before {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg,
+          transparent,
+          var(--teal-600),
+          transparent);
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--teal-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--teal-300);
+      margin: 0 auto 1.5rem;
+      background: var(--ink-900);
+      transition: all 0.4s;
+    }
+
+    .process-step:hover .step-num {
+      background: var(--teal-600);
+      color: var(--white);
+      border-color: var(--teal-400);
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--white);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.6;
+    }
+
+    /* ─── TECH SHOWCASE ─── */
+    #technology {
+      background: var(--sand);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .tech-pill {
+      background: var(--white);
+      border: 1px solid var(--sand-dark);
+      border-radius: 3px;
+      padding: 1.5rem;
+      transition: all 0.3s var(--ease-out-expo);
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      border-color: var(--teal-300);
+      box-shadow: 0 8px 30px rgba(45, 181, 181, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .tech-pill-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--teal-500);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .tech-pill h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-900);
+      line-height: 1.3;
+    }
+
+    /* ─── SUSTAINABILITY ─── */
+    #sustainability {
+      background: linear-gradient(135deg,
+          var(--teal-800) 0%,
+          var(--teal-900) 60%,
+          var(--ink-900) 100%);
+    }
+
+    .sustain-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .sustain-list {
+      list-style: none;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sustain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+    }
+
+    .sustain-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+      background: rgba(45, 181, 181, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .sustain-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--teal-300);
+    }
+
+    .sustain-visual {
+      position: relative;
+    }
+
+    .sustain-circle {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 1px solid rgba(45, 181, 181, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .sustain-circle::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(45, 181, 181, 0.15);
+    }
+
+    .sustain-circle::after {
+      content: "";
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(45, 181, 181, 0.1);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sustain-circle-inner {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sustain-big-text {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: var(--white);
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .sustain-big-sub {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--teal-300);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .sustain-orbits {
+      position: absolute;
+      inset: 0;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal-400);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--sand);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info {}
+
+    .contact-info p {
+      font-size: 0.95rem;
+      color: var(--ink-500);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--teal-100);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--teal-600);
+    }
+
+    .contact-detail-text span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--teal-600);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-detail-text p {
+      font-size: 0.9rem;
+      color: var(--ink-700);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .contact-form {}
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--ink-500);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--sand-dark);
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--ink-900);
+      outline: none;
+      transition: border-color 0.3s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal-400);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--teal-600);
+      color: var(--white);
+      border: none;
+      border-radius: 2px;
+      padding: 1rem;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .form-submit:hover {
+      background: var(--teal-500);
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--ink-300);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink-900);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 5rem var(--section-px) 2rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--white);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo .water {
+      color: var(--teal-300);
+    }
+
+    .footer-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--teal-400);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--white);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--teal-300);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-bottom .siec-link {
+      color: var(--teal-400);
+    }
+
+    .footer-bottom .siec-link:hover {
+      color: var(--teal-300);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .social-btn:hover {
+      border-color: var(--teal-400);
+      background: rgba(45, 181, 181, 0.1);
+    }
+
+    .social-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: rgba(255, 255, 255, 0.5);
+    }
+
+    .social-btn:hover svg {
+      stroke: var(--teal-300);
+    }
+
+    /* ─── MARQUEE ─── */
+    .marquee-section {
+      background: var(--teal-900);
+      padding: 1.25rem 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(45, 181, 181, 0.1);
+      border-bottom: 1px solid rgba(45, 181, 181, 0.1);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 4rem;
+      white-space: nowrap;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .marquee-item::before {
+      content: "◆";
+      color: var(--teal-500);
+      font-size: 0.4rem;
+    }
+
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ─── REVEAL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 0.8s var(--ease-out-expo),
+        transform 0.8s var(--ease-out-expo);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ─── SCROLLTOP ─── */
+    #scrolltop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 500;
+      width: 44px;
+      height: 44px;
+      background: var(--teal-600);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    #scrolltop.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    #scrolltop:hover {
+      background: var(--teal-500);
+    }
+
+    #scrolltop svg {
+      width: 18px;
+      height: 18px;
+      stroke: white;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-stats {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tab-panel.active {
+        grid-template-columns: 1fr;
+      }
+
+      .process-track {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .process-track::before {
+        display: none;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sustain-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-track {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-tabs {
+        gap: 0;
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ─── TOAST ─── */
+    #toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--teal-600);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      z-index: 9000;
+      opacity: 0;
+      transition: all 0.4s var(--ease-out-expo);
+      pointer-events: none;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-overlay"></div>
+
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span>SIEC</span>
+        <span>Water</span>
+      </div>
+
+      <div class="loader-tagline">Treat · Transform · Sustain</div>
+
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast">Message sent — we'll respond within 24 hours.</div>
+
+  <!-- Scroll to top -->
+  <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+      ×
+    </button>
+    <a href="/layout3.html" onclick="closeMobile()">About</a>
+    <a href="/layout2.html" onclick="closeMobile()">Why Us</a>
+    <a href="#expertise" onclick="closeMobile()">Expertise</a>
+    <a href="#process" onclick="closeMobile()">Process</a>
+    <a href="#technology" onclick="closeMobile()">Technology</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="nav">
+    <div class="nav-logo">
+      <div class="nav-logo-mark">SIEC <span class="water">Water</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/layout3.html">About</a></li>
+      <li><a href="/layout2.html">Why Us</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#technology">Technology</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="openMobile()" role="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">
+        <div class="hero-eyebrow-line"></div>
+        <span>A Division of SIEC — Sustainable Integrated Environmental
+          Consultant</span>
+      </div>
+      <h1 class="hero-title reveal reveal-delay-1">
+        Water That <em>Works</em><br />For the World
+      </h1>
+      <div class="hero-tagline reveal reveal-delay-2">
+        Treat · Transform · Sustain
+      </div>
+      <p class="hero-desc reveal reveal-delay-3">
+        Transforming water challenges into sustainable solutions through
+        cutting-edge WTP, STP, ETP, and ZLD technologies with smart digital
+        integration across India and beyond.
+      </p>
+      <div class="hero-actions reveal reveal-delay-4">
+        <a href="#expertise" class="btn-primary">
+          Explore Our Expertise
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn-outline">Request a Consultation</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">WTP</div>
+        <div class="stat-label">Water Treatment</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">STP</div>
+        <div class="stat-label">Sewage Treatment</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">ETP</div>
+        <div class="stat-label">Effluent Treatment</div>
+      </div>
+    </div>
+
+    <div class="hero-waves">
+      <div class="wave"></div>
+      <div class="wave wave-2"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">Water Treatment Plants</div>
+      <div class="marquee-item">Sewage Treatment Plants</div>
+      <div class="marquee-item">Effluent Treatment Plants</div>
+      <div class="marquee-item">Zero Liquid Discharge</div>
+      <div class="marquee-item">MBR · MBBR · SBR · RO</div>
+      <div class="marquee-item">Digital Twin Technology</div>
+      <div class="marquee-item">SCADA & IoT Integration</div>
+      <div class="marquee-item">AI-Powered Water Management</div>
+      <div class="marquee-item">IWRM Philosophy</div>
+      <div class="marquee-item">Water Treatment Plants</div>
+      <div class="marquee-item">Sewage Treatment Plants</div>
+      <div class="marquee-item">Effluent Treatment Plants</div>
+      <div class="marquee-item">Zero Liquid Discharge</div>
+      <div class="marquee-item">MBR · MBBR · SBR · RO</div>
+      <div class="marquee-item">Digital Twin Technology</div>
+      <div class="marquee-item">SCADA & IoT Integration</div>
+      <div class="marquee-item">AI-Powered Water Management</div>
+      <div class="marquee-item">IWRM Philosophy</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-pad">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Who We Are</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          A Specialized Division<br />Built for <em>Water</em>
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          SIEC Water is the water-focused arm of Sustainable Integrated
+          Environmental Consultant (SIEC), dedicated exclusively to delivering
+          innovative and sustainable water solutions. We design and implement
+          Water Treatment Plants (WTP), Sewage Treatment Plants (STP), and
+          Effluent Treatment Plants (ETP) with an unwavering commitment to
+          environmental responsibility and advanced engineering.
+        </p>
+        <p class="section-subtitle reveal reveal-delay-3" style="margin-top: 1rem">
+          Our approach is rooted in
+          <strong>Integrated Water Resource Management (IWRM)</strong> —
+          combining cutting-edge technology with sustainable strategy to
+          create smarter, greener water infrastructure for industries,
+          municipalities, and critical infrastructure at scale.
+        </p>
+        <div class="about-callout reveal reveal-delay-4">
+          <div class="about-callout-tag">Our Purpose</div>
+          <p>
+            To deliver
+            <em>innovative water and wastewater infrastructure</em> for
+            industries, cities, and a sustainable planet — empowering
+            environmental progress through smart water systems.
+          </p>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="value-card reveal">
+          <h3>Vision</h3>
+          <p>
+            A world where every drop of water is valued, treated, and reused
+            responsibly — enabling communities, industries, and cities to
+            thrive through sustainable water solutions.
+          </p>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <h3>Mission</h3>
+          <p>
+            To lead in delivering smart, integrated, and sustainable water and
+            wastewater infrastructure — empowering environmental progress
+            through innovation, circular practices, and resilient design.
+          </p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <h3>Core Philosophy</h3>
+          <p>
+            Technical expertise, innovation, and environmental integrity
+            combined through a multidisciplinary approach built on
+            collaboration and circular thinking — ensuring every solution
+            supports a cleaner, greener, water-secure future.
+          </p>
+        </div>
+        <div class="value-card reveal reveal-delay-3">
+          <h3>Our Commitment</h3>
+          <p>
+            We exclusively partner with top-tier global brands and certified
+            technologies across all projects. While others optimize cost
+            through substitutions, we guarantee premium components delivering
+            long-term reliability and international compliance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section id="why" class="section-pad">
+    <div class="section-label reveal">
+      <div class="section-label-line" style="background: var(--teal-400)"></div>
+      <span style="color: var(--teal-300)">Our Differentiators</span>
+    </div>
+
+    <div class="why-header">
+      <div class="why-heading">
+        <h2 class="section-title section-title-white reveal reveal-delay-1">
+          Why Industry Leaders<br />Choose <em>SIEC Water</em>
+        </h2>
+        <p class="section-subtitle section-subtitle-white reveal reveal-delay-2">
+         At SIEC Water, we deliver innovative and sustainable water and wastewater solutions through advanced engineering, certified technologies, and uncompromising quality. From WTPs, STPs, and ETPs to next-generation treatment systems, we create efficient, future-ready infrastructure that supports long-term environmental and operational performance.
+        </p>
+      </div>
+
+      <div class="why-stats reveal reveal-delay-2">
+        <div class="stat-box">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Cities & Industries</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Client Retention</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-grid reveal reveal-delay-3">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <h3>Uncompromised Quality</h3>
+        <p>We exclusively source premium, globally certified components — no substitutions, no shortcuts. Every project
+          meets international standards for long-term reliability.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l4 2" />
+          </svg>
+        </div>
+        <h3>End-to-End Capability</h3>
+        <p>From concept and feasibility through design, procurement, commissioning, and ongoing O&M — we provide fully
+          integrated project delivery under one roof.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+        </div>
+        <h3>Intelligent & Future-Ready</h3>
+        <p>MBR, MBBR, ZLD, digital twin platforms, and AI-based monitoring ensure our systems are designed for the water
+          challenges of today and tomorrow.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+        </div>
+        <h3>IWRM-Guided Design</h3>
+        <p>Every solution is grounded in Integrated Water Resource Management principles, ensuring environmental
+          responsibility and operational efficiency at every stage.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+        </div>
+        <h3>Deep Domain Expertise</h3>
+        <p>Our team of experienced engineers, process designers, and environmental specialists brings proven performance
+          across industries, smart cities, and critical infrastructure.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <h3>Transparent Partnership</h3>
+        <p>We operate with ethical execution and long-term thinking — prioritizing outcomes over transactions, building
+          lasting relationships grounded in trust and accountability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE / SERVICES -->
+  <section id="expertise" class="section-pad">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Services & Expertise</span>
+    </div>
+    <h2 class="section-title reveal reveal-delay-1">
+      Seven Pillars of<br /><em>Water Excellence</em>
+    </h2>
+
+    <div class="expertise-tabs reveal reveal-delay-2" id="expertiseTabs">
+      <button class="tab-btn active" data-tab="wtp">Pure Water</button>
+      <button class="tab-btn" data-tab="stp">Sewage Reinvented</button>
+      <button class="tab-btn" data-tab="etp">Effluent Treatment</button>
+      <button class="tab-btn" data-tab="zld">Reclaim & Reuse</button>
+      <button class="tab-btn" data-tab="sustain">Smart Sustainability</button>
+      <button class="tab-btn" data-tab="digital">Intelligence</button>
+      <button class="tab-btn" data-tab="supplies">Supplies</button>
+    </div>
+
+    <!-- WTP -->
+    <div class="tab-panel active" id="tab-wtp">
+      <div class="expertise-content">
+        <h2><em>Pure Water,</em><br />Perfectly Engineered</h2>
+        <p class="lead">
+          We engineer precision-driven water treatment solutions tailored to
+          meet complex water quality challenges across industries. Beginning
+          with thorough raw water analysis, we select the most effective
+          treatment train — whether reverse osmosis, ultrafiltration, ion
+          exchange, or hybrid systems. Every plant is custom engineered to
+          optimize recovery, reduce energy consumption, and meet specific
+          compliance or reuse standards.
+        </p>
+        <ul class="service-list">
+          <li>Desalination Systems</li>
+          <li>Reverse Osmosis (RO) Systems</li>
+          <li>Ultra Filtration (UF) Systems</li>
+          <li>Ion Exchange Systems</li>
+          <li>Condensate Polishing Unit (CPU) Systems</li>
+          <li>SCADA / IoT Integrated Plants</li>
+          <li>Energy Recovery Systems</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">💧</div>
+          <div class="expertise-visual-label">
+            Water Treatment<br />Plants (WTP)
+          </div>
+          <div class="expertise-visual-sub">
+            Design · Engineer · Commission
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STP -->
+    <div class="tab-panel" id="tab-stp">
+      <div class="expertise-content">
+        <h2><em>Sewage</em><br />Reinvented</h2>
+        <p class="lead">
+          We don't just treat sewage — we transform it into a valuable
+          resource. Built on the principles of circular economy, advanced
+          biological treatment, and resource recovery, our next-generation
+          STPs go beyond compliance, focusing on energy efficiency, nutrient
+          recovery, water reuse, and minimized environmental footprint.
+          Technologies like MBBR, MBR, SBR, and A2O are selected based on
+          influent characteristics and site-specific challenges.
+        </p>
+        <ul class="service-list">
+          <li>Sewage Treatment Plants (STP)</li>
+          <li>Tertiary Treatment Units (TTU)</li>
+          <li>Sludge Treatment & Dewatering</li>
+          <li>Odor & Residue Management</li>
+          <li>Decentralized Treatment Solutions</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">♻️</div>
+          <div class="expertise-visual-label">
+            Sewage Treatment<br />Plants (STP)
+          </div>
+          <div class="expertise-visual-sub">MBBR · MBR · SBR · A2O</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETP -->
+    <div class="tab-panel" id="tab-etp">
+      <div class="expertise-content">
+        <h2><em>Next-Gen</em><br />Effluent Treatment</h2>
+        <p class="lead">
+          We are driving a paradigm shift in industrial wastewater management.
+          Our approach blends deep process knowledge with cutting-edge
+          technologies to treat even the most complex effluents — high TDS,
+          refractory COD, heavy metals, and fluctuating loads — with precision
+          and sustainability. From conventional ETPs to advanced ZLD systems,
+          solutions are tailored to industry-specific requirements, ensuring
+          regulatory compliance while enabling water reuse and byproduct
+          recovery.
+        </p>
+        <ul class="service-list">
+          <li>Effluent Treatment Plants (ETP)</li>
+          <li>Tertiary Treatment Units (TTU)</li>
+          <li>Sludge Treatment & Dewatering</li>
+          <li>Odor & Residue Management</li>
+          <li>Decentralized Treatment Solutions</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">🏭</div>
+          <div class="expertise-visual-label">
+            Effluent Treatment<br />Plants (ETP)
+          </div>
+          <div class="expertise-visual-sub">
+            Industrial · Compliance · Recovery
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZLD -->
+    <div class="tab-panel" id="tab-zld">
+      <div class="expertise-content">
+        <h2><em>Reclaim.</em><br />Reuse. Restore.</h2>
+        <p class="lead">
+          Every drop counts — and every drop can be reclaimed. Our philosophy
+          centers on closing the loop in water management by converting waste
+          streams into sustainable water resources. Through innovative
+          integration of treatment, polishing, and recycling systems, we help
+          clients minimize freshwater dependency and achieve true water
+          circularity — producing high-quality treated water for cooling
+          towers, process water, flushing, and irrigation.
+        </p>
+        <ul class="service-list">
+          <li>Water Reuse & Recycling Systems</li>
+          <li>Zero Liquid Discharge (ZLD) Systems</li>
+          <li>Rainwater Harvesting Systems</li>
+          <li>Decentralized & Compact Reuse Units</li>
+          <li>Treated Water for Non-Potable Uses</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">🔄</div>
+          <div class="expertise-visual-label">
+            Zero Liquid<br />Discharge (ZLD)
+          </div>
+          <div class="expertise-visual-sub">Circular Water Economy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUSTAINABILITY -->
+    <div class="tab-panel" id="tab-sustain">
+      <div class="expertise-content">
+        <h2>Smart Sustainability<br />in <em>Every Drop</em></h2>
+        <p class="lead">
+          Sustainability is not a feature — it's a foundation. We reimagine
+          water infrastructure as an intelligent, adaptive ecosystem,
+          embedding environmental stewardship into every solution we design.
+          Through real-time monitoring, AI-enabled control systems,
+          energy-efficient processes, and green chemistry, we deliver water
+          systems that are not only compliant — but resilient, low-carbon, and
+          cost-effective.
+        </p>
+        <ul class="service-list">
+          <li>Energy-Efficient Water Systems</li>
+          <li>Circular Economy Integration</li>
+          <li>Green Certifications & ESG Compliance</li>
+          <li>Low Chemical Footprint Systems</li>
+          <li>Rainwater & Stormwater Management</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">🌿</div>
+          <div class="expertise-visual-label">
+            Integrated Water<br />Management
+          </div>
+          <div class="expertise-visual-sub">ESG · Green · Resilient</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIGITAL -->
+    <div class="tab-panel" id="tab-digital">
+      <div class="expertise-content">
+        <h2>Intelligence That<br /><em>Powers Water</em></h2>
+        <p class="lead">
+          We bring intelligence to the heart of water treatment. Our
+          SCADA-enabled, IoT-integrated systems offer real-time visibility,
+          predictive maintenance, adaptive dosing, and remote operations.
+          Whether managing complex industrial wastewater or ensuring ultrapure
+          process water, our intelligent systems enhance efficiency, uptime,
+          and compliance while reducing human error and operating costs. By
+          embedding intelligence into every valve, sensor, and screen — your
+          infrastructure becomes proactive, responsive, and future-ready.
+        </p>
+        <ul class="service-list">
+          <li>Digital Twin Technology</li>
+          <li>SCADA & Automation</li>
+          <li>IoT & Sensor Networks</li>
+          <li>AI & ML Integration</li>
+          <li>Data Analytics & Compliance Reporting</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">🤖</div>
+          <div class="expertise-visual-label">
+            Digitalization &<br />Automation
+          </div>
+          <div class="expertise-visual-sub">AI · IoT · Digital Twin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPLIES -->
+    <div class="tab-panel" id="tab-supplies">
+      <div class="expertise-content">
+        <h2>Supplies That<br /><em>Power Purity</em></h2>
+        <p class="lead">
+          We deliver more than just materials — we deliver performance. Our
+          complete range of high-quality chemicals, membranes, filtration
+          media, and auxiliary components ensures that every water and
+          wastewater treatment plant operates at its peak. From coagulants,
+          disinfectants, and antiscalants to RO membranes, MBBR media, and
+          dosing systems, we source and supply trusted brands tailored to your
+          plant's specific process needs. Every supply is backed by technical
+          support, compatibility assurance, and logistics efficiency.
+        </p>
+        <ul class="service-list">
+          <li>Water Treatment Chemicals</li>
+          <li>Membranes (RO, UF, NF)</li>
+          <li>Filtration Systems & Media</li>
+          <li>Pumps, Blowers & Mechanical Components</li>
+          <li>Monitoring, Control & Utility Systems</li>
+        </ul>
+      </div>
+      <div class="expertise-visual">
+        <div class="expertise-visual-inner">
+          <div class="expertise-visual-icon">⚙️</div>
+          <div class="expertise-visual-label">
+            Chemicals,<br />Membranes & Spares
+          </div>
+          <div class="expertise-visual-sub">
+            Reliability · Precision · Performance
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section-pad">
+    <div class="section-label reveal">
+      <div class="section-label-line" style="background: var(--teal-400)"></div>
+      <span style="color: var(--teal-300)">How We Work</span>
+    </div>
+    <h2 class="section-title section-title-white reveal reveal-delay-1">
+      From <em>Blueprints</em><br />to Breakthroughs
+    </h2>
+    <p class="section-subtitle section-subtitle-white reveal reveal-delay-2">
+      A proven five-stage delivery methodology that takes every project from
+      initial concept to commissioning and beyond — ensuring precision,
+      quality, and sustainable outcomes at every step.
+    </p>
+    <div class="process-track reveal reveal-delay-3">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Feasibility & Audit</div>
+        <div class="step-desc">
+          Water audits, site assessment, raw water analysis, and feasibility
+          studies to define the right treatment strategy.
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Process Engineering</div>
+        <div class="step-desc">
+          Custom treatment train selection, detailed process design, P&ID
+          development, and regulatory compliance mapping.
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Fabrication & Procurement</div>
+        <div class="step-desc">
+          Modular fabrication using top-tier global components, rigorous
+          quality checks, and supply chain management.
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Installation & Commissioning</div>
+        <div class="step-desc">
+          Expert installation, system testing, performance validation, and
+          full commissioning to operational readiness.
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-title">O&M Partnership</div>
+        <div class="step-desc">
+          Ongoing operations and maintenance support, remote monitoring,
+          predictive servicing, and continuous optimization.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section id="technology" class="section-pad">
+    <div style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: start;
+        " class="tech-intro">
+      <div>
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Core Technologies</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          State-of-the-Art<br /><em>Treatment Technologies</em>
+        </h2>
+      </div>
+      <div>
+        <p class="section-subtitle reveal reveal-delay-2" style="margin-top: 3.5rem">
+          We integrate only certified, globally proven technologies into every
+          project — selected based on your specific process requirements,
+          compliance targets, and long-term operational goals.
+        </p>
+      </div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-pill reveal">
+        <div class="tech-pill-tag">Biological Treatment</div>
+        <h4>MBR — Membrane Bioreactor</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-1">
+        <div class="tech-pill-tag">Biological Treatment</div>
+        <h4>MBBR — Moving Bed Biofilm Reactor</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-2">
+        <div class="tech-pill-tag">Biological Treatment</div>
+        <h4>SBR — Sequencing Batch Reactor</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-3">
+        <div class="tech-pill-tag">Biological Treatment</div>
+        <h4>A2O Process</h4>
+      </div>
+      <div class="tech-pill reveal">
+        <div class="tech-pill-tag">Membrane Separation</div>
+        <h4>RO — Reverse Osmosis</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-1">
+        <div class="tech-pill-tag">Membrane Separation</div>
+        <h4>UF — Ultra Filtration</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-2">
+        <div class="tech-pill-tag">Zero Discharge</div>
+        <h4>ZLD — Zero Liquid Discharge Systems</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-3">
+        <div class="tech-pill-tag">Digitalization</div>
+        <h4>Digital Twin Platforms</h4>
+      </div>
+      <div class="tech-pill reveal">
+        <div class="tech-pill-tag">Automation</div>
+        <h4>SCADA & IoT Integration</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-1">
+        <div class="tech-pill-tag">Intelligence</div>
+        <h4>AI & ML-Based Monitoring</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-2">
+        <div class="tech-pill-tag">Separation</div>
+        <h4>Ion Exchange Systems</h4>
+      </div>
+      <div class="tech-pill reveal reveal-delay-3">
+        <div class="tech-pill-tag">Advanced</div>
+        <h4>Desalination Systems</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSTAINABILITY SECTION -->
+  <section id="sustainability" class="section-pad">
+    <div class="sustain-split">
+      <div>
+        <div class="section-label reveal">
+          <div class="section-label-line" style="background: var(--teal-400)"></div>
+          <span style="color: var(--teal-300)">Our Sustainability DNA</span>
+        </div>
+        <h2 class="section-title section-title-white reveal reveal-delay-1">
+          Smart Sustainability<br />in <em>Every Drop</em>
+        </h2>
+        <p class="section-subtitle section-subtitle-white reveal reveal-delay-2">
+          Sustainability is not a feature — it's the foundation of everything
+          we build. Each drop treated is a step toward climate resilience,
+          regulatory leadership, and long-term operational excellence.
+        </p>
+        <ul class="sustain-list reveal reveal-delay-3">
+          <li>
+            <div class="sustain-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <span>Energy-efficient processes that minimize operational carbon
+              footprint and utility costs</span>
+          </li>
+          <li>
+            <div class="sustain-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10" />
+                <polyline points="1 20 1 14 7 14" />
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+              </svg>
+            </div>
+            <span>Circular economy integration — closing the loop from waste
+              stream to water resource</span>
+          </li>
+          <li>
+            <div class="sustain-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <span>Green certifications and ESG compliance frameworks embedded in
+              project delivery</span>
+          </li>
+          <li>
+            <div class="sustain-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <span>Low chemical footprint systems using green chemistry and
+              optimized dosing intelligence</span>
+          </li>
+        </ul>
+      </div>
+      <div class="sustain-visual reveal reveal-delay-3">
+        <div class="sustain-circle">
+          <div class="sustain-circle-inner">
+            <div class="sustain-big-text">IWRM</div>
+            <div class="sustain-big-sub">
+              Integrated Water<br />Resource Management
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-pad">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span>Get In Touch</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Start Your Water<br /><em>Transformation</em>
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Whether you're planning a new WTP, STP, or ETP, looking to upgrade
+          existing infrastructure, or exploring smart water management
+          solutions — our experts are ready to design the right solution for
+          your specific needs.
+        </p>
+        <div class="contact-detail reveal reveal-delay-3">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+            </svg>
+          </div>
+          <div class="contact-detail-text">
+            <span>Phone</span>
+            <p>+91 8009924800</p>
+          </div>
+        </div>
+        <div class="contact-detail reveal reveal-delay-4">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-detail-text">
+            <span>Email</span>
+            <p>marketing@sienvconsult.com</p>
+          </div>
+        </div>
+        <div class="contact-detail reveal reveal-delay-5">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-detail-text">
+            <span>Office</span>
+            <p>
+              Office 401, Sanskriti Arcade<br />Kaspate Wasti, Wakad<br />Pune,
+              Maharashtra 411057, India
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Rahul" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Sharma" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="rahul@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service of Interest</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Water Treatment Plant (WTP)</option>
+              <option>Sewage Treatment Plant (STP)</option>
+              <option>Effluent Treatment Plant (ETP)</option>
+              <option>Zero Liquid Discharge (ZLD)</option>
+              <option>Water Recycling & Reuse</option>
+              <option>SCADA / Digitalization</option>
+              <option>Chemicals & Supplies</option>
+              <option>Operations & Maintenance</option>
+              <option>Other / Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message"
+              placeholder="Describe your project, capacity requirements, timeline, or any specific challenges..."
+              rows="4"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Inquiry</button>
+          <p class="form-note">
+            We respond to all inquiries within 24 business hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">SIEC <span class="water">Water</span></div>
+        <div class="footer-tagline">Treat · Transform · Sustain</div>
+        <p>
+          A specialized division of Sustainable Integrated Environmental
+          Consultant (SIEC), delivering smart, integrated, and sustainable
+          water and wastewater infrastructure for industries, cities, and a
+          sustainable planet.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#expertise">Water Treatment (WTP)</a></li>
+          <li><a href="#expertise">Sewage Treatment (STP)</a></li>
+          <li><a href="#expertise">Effluent Treatment (ETP)</a></li>
+          <li><a href="#expertise">Zero Liquid Discharge</a></li>
+          <li><a href="#expertise">Water Recycling</a></li>
+          <li><a href="#expertise">Digitalization & SCADA</a></li>
+          <li><a href="#expertise">Chemicals & Supplies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About SIEC Water</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#technology">Technology</a></li>
+          <li>
+            <a href="https://sienvconsult.com" target="_blank" rel="noopener">SIEC Parent</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918009924800">+91 8009924800</a></li>
+          <li>
+            <a href="mailto:marketing@sienvconsult.com">marketing@sienvconsult.com</a>
+          </li>
+          <li><a href="#contact">Request Consultation</a></li>
+        </ul>
+        <div style="margin-top: 1.5rem">
+          <h4>Address</h4>
+          <p style="
+                font-size: 0.82rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.4);
+                margin-top: 0.75rem;
+              ">
+            Office 401, Sanskriti Arcade<br />
+            Kaspate Wasti, Wakad<br />
+            Pune, Maharashtra 411057<br />
+            India
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        © 2025 SIEC Water — A Division of
+        <a href="https://sienvconsult.com" target="_blank" rel="noopener" class="siec-link">Sustainable Integrated
+          Environmental Consultant (SIEC)</a>. All rights reserved.
+      </p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+          </svg>
+        </a>
+        <a href="mailto:marketing@sienvconsult.com" class="social-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── LOADER ───
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").classList.add("hidden");
+        // Trigger hero animations
+        document.querySelectorAll("#hero .reveal").forEach((el, i) => {
+          setTimeout(() => el.classList.add("revealed"), i * 120);
+        });
+      }, 2000);
+    });
+
+    // ─── CURSOR ───
+    const cursor = document.getElementById("cursor");
+    const dot = document.getElementById("cursorDot");
+    let cx = 0,
+      cy = 0,
+      tx = 0,
+      ty = 0;
+    document.addEventListener("mousemove", (e) => {
+      tx = e.clientX;
+      ty = e.clientY;
+      dot.style.left = tx + "px";
+      dot.style.top = ty + "px";
+    });
+    function animCursor() {
+      cx += (tx - cx) * 0.15;
+      cy += (ty - cy) * 0.15;
+      cursor.style.left = cx + "px";
+      cursor.style.top = cy + "px";
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    document
+      .querySelectorAll("a,button,.why-card,.tech-pill,.value-card")
+      .forEach((el) => {
+        el.addEventListener(
+          "mouseenter",
+          () => (cursor.style.transform = "translate(-50%,-50%) scale(2)"),
+        );
+        el.addEventListener(
+          "mouseleave",
+          () => (cursor.style.transform = "translate(-50%,-50%) scale(1)"),
+        );
+      });
+
+    // ─── NAV SCROLL ───
+    const nav = document.getElementById("nav");
+    const scrolltop = document.getElementById("scrolltop");
+    window.addEventListener("scroll", () => {
+      const s = window.scrollY;
+      nav.classList.toggle("scrolled", s > 80);
+      scrolltop.classList.toggle("visible", s > 600);
+    });
+
+    // ─── REVEAL ON SCROLL ───
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("revealed");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    );
+    revealEls.forEach((el) => observer.observe(el));
+
+    // ─── TABS ───
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document
+          .getElementById("tab-" + btn.dataset.tab)
+          .classList.add("active");
+      });
+    });
+
+    // ─── MOBILE MENU ───
+    function openMobile() {
+      document.getElementById("mobileMenu").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMobile() {
+      document.getElementById("mobileMenu").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    document
+      .getElementById("mobileClose")
+      .addEventListener("click", closeMobile);
+
+    // ─── FORM SUBMIT ───
+    function handleSubmit(e) {
+      e.preventDefault();
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      e.target.reset();
+      setTimeout(() => toast.classList.remove("show"), 4000);
+    }
+
+    // ─── SMOOTH ANCHOR SCROLL ───
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const target = document.querySelector(a.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // ─── COUNTER ANIMATION ───
+    function animateCounters() {
+      document.querySelectorAll("[data-count]").forEach((el) => {
+        const target = parseInt(el.dataset.count);
+        let current = 0;
+        const step = target / 60;
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = Math.floor(current) + (el.dataset.suffix || "");
+          if (current >= target) clearInterval(timer);
+        }, 16);
+      });
+    }
+  </script>
+</body>
+
+</html>

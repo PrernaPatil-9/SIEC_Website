@@ -1,0 +1,243 @@
+<style>
+  #mobile-menu {
+    max-height: 85vh;
+    /* Changed from 0 on load */
+    overflow-y: auto;
+    /* Main menu scroll */
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    scrollbar-width: thin;
+    scrollbar-color: #26AF93 #F2F9F6;
+  }
+
+  #mobile-services-menu {
+    max-height: 0;
+    overflow: hidden;
+    /* Only hide when closed */
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Nice scrollbar for Webkit */
+  #mobile-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #mobile-menu::-webkit-scrollbar-thumb {
+    background: #26AF93;
+    border-radius: 20px;
+  }
+</style>
+
+<header
+  class="fixed top-0 left-0 w-full bg-white/85 backdrop-blur-2xl border-b border-[#DCEBE4]/80 shadow-md z-50 rounded-b-[2.5rem]">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
+
+    <!-- Logo - Slightly Larger & More Visible -->
+    <div class="flex items-center ml-6 overflow-visible">
+      <img src="../Images/logo.png" alt="SIEC Logo"
+        class="h-11 sm:h-12 w-auto object-cover scale-125 origin-left transition-all duration-300 hover:scale-[1.3]" />
+    </div>
+
+    <!-- Desktop Menu - Reduced Gap -->
+    <ul class="hidden md:flex items-center gap-4 lg:gap-4 text-sm font-medium text-[#112A23]">
+      <li>
+        <a href="../index.html"
+          class="font-quicksand relative px-4 py-2.5 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out group">
+          Home
+          <span
+            class="absolute left-1/2 -translate-x-1/2 -bottom-1 h-0.5 w-0 bg-[#26AF93] group-hover:w-5 transition-all duration-300"></span>
+        </a>
+      </li>
+      <li>
+        <a href="../layout2.html"
+          class="font-quicksand relative px-4 py-2.5 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out group">
+          About
+          <span
+            class="absolute left-1/2 -translate-x-1/2 -bottom-1 h-0.5 w-0 bg-[#26AF93] group-hover:w-5 transition-all duration-300"></span>
+        </a>
+      </li>
+
+      <!-- Services -->
+      <li class="relative group">
+        <button
+          class="flex items-center gap-1 font-quicksand px-2 py-2 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out">
+          Services
+          <span
+            class="material-icons text-base transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+        </button>
+
+        <ul
+          class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-60 bg-white/95 backdrop-blur-xl border border-[#DCEBE4] rounded-3xl py-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+          <li><a href="../webdev/webdev.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Environmental
+              Services</a></li>
+          <li><a href="../digitalmarketing/marketing.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Smart
+              Water Management</a></li>
+          <li><a href="../software/software.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Infrastructure
+              Design</a></li>
+          <li><a href="../graphic.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Project
+              Management</a></li>
+          <li><a href="../comingsoon.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Digital
+              Sustainability</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../layout3.html"
+          class="font-quicksand relative px-4 py-2.5 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out group">
+          Careers
+          <span
+            class="absolute left-1/2 -translate-x-1/2 -bottom-1 h-0.5 w-0 bg-[#26AF93] group-hover:w-5 transition-all duration-300"></span>
+        </a>
+      </li>
+      <li>
+        <a href="../layout1.html"
+          class="font-quicksand relative px-4 py-2.5 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out group">
+          Contact
+          <span
+            class="absolute left-1/2 -translate-x-1/2 -bottom-1 h-0.5 w-0 bg-[#26AF93] group-hover:w-5 transition-all duration-300"></span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Right Side -->
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Brochure Download -->
+      <a href="#"
+        class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#26AF93] to-[#0F8F78] text-white text-sm font-medium rounded-3xl hover:shadow-lg hover:shadow-[#26AF93]/30 transition-all duration-300 ease-in-out hover:scale-105">
+        <i class="fa-solid fa-download"></i>
+        Brochure
+      </a>
+
+      <!-- Social Icons - Enhanced Hover with Glass Mirror Effect -->
+      <div class="flex items-center gap-2">
+        <a href="https://www.instagram.com/kunash_media_solutions?igsh=MTd4Nm42b2JnMHRyYw==" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+          w-10 h-10 rounded-full border border-[#DCEBE4]
+          bg-white/70 backdrop-blur-md
+          transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+           hover:shadow-[0_12px_30px_rgba(15,143,120,0.22)]">
+
+          <!-- Fill Animation -->
+          <span class="absolute inset-0 rounded-full bg-[#0A7563]
+                 scale-0 group-hover:scale-100
+                 transition-transform duration-700
+                ease-[cubic-bezier(0.16,1,0.3,1)]
+                 origin-center">
+          </span>
+
+          <!-- Icon -->
+          <i class="fa-brands fa-instagram relative z-10 text-[#2A463D]
+              transition-all duration-700
+              group-hover:text-white
+              group-hover:scale-110"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/company/kunash-media/" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+          w-9 h-9 rounded-full border border-[#DCEBE4]
+          bg-white/70 backdrop-blur-md
+          transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+          hover:shadow-[0_12px_30px_rgba(15,143,120,0.22)]
+          hover:scale-110">
+
+          <span class="absolute inset-0 rounded-full bg-[#0A7563]
+                 scale-0 group-hover:scale-100
+                 transition-transform duration-700
+                ease-[cubic-bezier(0.16,1,0.3,1)]
+                 origin-center"></span>
+
+          <i class="fa-brands fa-linkedin-in relative z-10
+              text-[#2A463D]
+              transition-all duration-700
+              group-hover:text-white
+              group-hover:scale-110"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/17ZM1TKmQt/" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+          w-9 h-9 rounded-full border border-[#DCEBE4]
+          bg-white/70 backdrop-blur-md
+          transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+          hover:shadow-[0_12px_30px_rgba(15,143,120,0.22)]
+          hover:scale-110">
+
+          <span class="absolute inset-0 rounded-full bg-[#0A7563]
+                 scale-0 group-hover:scale-100
+                 transition-transform duration-700
+                 ease-[cubic-bezier(0.16,1,0.3,1)]
+                 origin-center"></span>
+
+          <i class="fa-brands fa-facebook-f relative z-10
+              text-[#2A463D]
+              transition-all duration-700
+              group-hover:text-white
+              group-hover:scale-110"></i>
+        </a>
+
+
+        <a href="https://wa.me/918080473916" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+          w-9 h-9 rounded-full border border-[#DCEBE4]
+          bg-white/70 backdrop-blur-md
+          transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+          hover:shadow-[0_12px_30px_rgba(15,143,120,0.22)]
+          hover:scale-110">
+
+          <span class="absolute inset-0 rounded-full bg-[#0A7563]
+                 scale-0 group-hover:scale-100
+                 transition-transform duration-700
+                 ease-[cubic-bezier(0.16,1,0.3,1)]
+                 origin-center"></span>
+
+          <i class="fa-brands fa-whatsapp relative z-10
+              text-[#2A463D]
+              transition-all duration-700
+              group-hover:text-white
+              group-hover:scale-110"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="menu-btn" class="md:hidden text-[#112A23] hover:text-[#26AF93] transition-colors">
+      <span class="material-icons text-3xl">menu</span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu - Fixed Scroll Issue -->
+  <!-- Mobile Menu -->
+  <div id="mobile-menu"
+    class="md:hidden max-h-[85vh] overflow-y-auto transition-all duration-500 ease-out bg-white/95 backdrop-blur-2xl border-t border-[#DCEBE4] rounded-b-3xl">
+    <div class="px-6 py-5 flex flex-col gap-1 text-base text-[#2A463D]">
+      <a href="../index.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">Home</a>
+      <a href="../about/about.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">About</a>
+
+      <div class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">
+        <button id="mobile-services-btn" class="w-full flex justify-between items-center">
+          Services
+          <span id="mobile-services-icon" class="material-icons transition-transform duration-300">add</span>
+        </button>
+        <div id="mobile-services-menu"
+          class="pl-6 mt-3 space-y-2 max-h-0 overflow-hidden transition-all duration-400 ease-in-out">
+          <a href="../webdev/webdev.html"
+            class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Environmental Services</a>
+          <a href="../digitalmarketing/marketing.html"
+            class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Smart Water Management</a>
+          <a href="../software/software.html"
+            class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Infrastructure Design</a>
+          <a href="../graphic.html" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Project
+            Management</a>
+          <a href="../comingsoon.html" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Digital
+            Sustainability</a>
+        </div>
+      </div>
+      <a href="../career.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">Careers</a>
+      <a href="../contact.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">Contact</a>
+
+      <a href="#"
+        class="mt-6 mx-5 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-[#26AF93] to-[#0F8F78] text-white rounded-3xl">
+        <i class="fa-solid fa-download"></i> Download Brochure
+      </a>
+    </div>
+  </div>
+</header>
