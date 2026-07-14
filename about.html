@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | SIEC</title>
@@ -10,8 +9,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon.png"
+    />
 
     <!-- Apple devices -->
     <link rel="apple-touch-icon" href="./images/favicon.png" />
@@ -24,436 +33,547 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Zain:wght@200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Zain:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Zain:wght@200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Zain:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
     <style>
-        :root {
-            --mint: #f8fcfa;
-            --mint2: #f2f9f6;
-            --mint3: #eaf7f2;
-            --sage: #d8eee5;
-            --t100: #d8f6ee;
-            --t200: #b7ebde;
-            --t300: #86dbc8;
-            --t400: #53c8af;
-            --t500: #26af93;
-            --t600: #0f8f78;
-            --t700: #0a7563;
-            --ink: #112a23;
-            --ink2: #2a463d;
-            --ink3: #48675b;
-            --ink4: #6b897d;
-            --ink5: #93ada3;
-            --border: #dcebe4;
-            --border-light: #eaf4ef;
+      :root {
+        --mint: #f8fcfa;
+        --mint2: #f2f9f6;
+        --mint3: #eaf7f2;
+        --sage: #d8eee5;
+        --t100: #d8f6ee;
+        --t200: #b7ebde;
+        --t300: #86dbc8;
+        --t400: #53c8af;
+        --t500: #26af93;
+        --t600: #0f8f78;
+        --t700: #0a7563;
+        --ink: #112a23;
+        --ink2: #2a463d;
+        --ink3: #48675b;
+        --ink4: #6b897d;
+        --ink5: #93ada3;
+        --border: #dcebe4;
+        --border-light: #eaf4ef;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "General Sans", sans-serif;
+        background: var(--mint);
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+
+      .font-display {
+        font-family: "Fraunces", Georgia, serif;
+      }
+
+      .font-mono {
+        font-family: "Azeret Mono", monospace;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
 
-        body {
-            font-family: "General Sans", sans-serif;
-            background: var(--mint);
-            color: var(--ink);
-            overflow-x: hidden;
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
         }
 
-        .font-display {
-            font-family: "Fraunces", Georgia, serif;
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
         }
 
-        .font-mono {
-            font-family: "Azeret Mono", monospace;
+        50% {
+          transform: translateY(-10px);
         }
+      }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+      .animate-fade-up {
+        opacity: 0;
+        animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
+      .animate-scale-in {
+        opacity: 0;
+        animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
 
-            to {
-                opacity: 1;
-            }
-        }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
 
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
 
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
 
-        @keyframes float {
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
 
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
+      .delay-4 {
+        animation-delay: 0.4s;
+      }
 
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+      .delay-5 {
+        animation-delay: 0.5s;
+      }
 
-        .animate-fade-up {
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
+      .glass {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(38, 175, 147, 0.08);
+      }
 
-        .animate-fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-        }
+      .glass-dark {
+        background: rgba(10, 46, 46, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(38, 175, 147, 0.1);
+      }
 
-        .animate-scale-in {
-            opacity: 0;
-            animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
+      ::-webkit-scrollbar-track {
+        background: var(--mint);
+      }
 
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.3s;
-        }
-
-        .delay-4 {
-            animation-delay: 0.4s;
-        }
-
-        .delay-5 {
-            animation-delay: 0.5s;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(38, 175, 147, 0.08);
-        }
-
-        .glass-dark {
-            background: rgba(10, 46, 46, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(38, 175, 147, 0.1);
-        }
-
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--mint);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--t300);
-            border-radius: 8px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: var(--t300);
+        border-radius: 8px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
 
     <!-- ===== ASYMMETRIC HERO ===== -->
     <section class="relative mt-10 py-2 bg-[#F5F7F6]">
-        <div class="max-w-[1700px] mx-auto px-2">
-            <!-- Premium Banner -->
-            <div
-                class="relative overflow-hidden rounded-[20px] border border-white/40 ring-1 ring-[#D7E5DF] shadow-[0_18px_50px_rgba(5,63,55,0.14)] min-h-[60vh]">
-                <!-- Background Image -->
-                <img src="./Images/aboutbanner.jfif" alt="Sustainable Future"
-                    class="absolute inset-0 w-full h-full object-cover" />
+      <div class="max-w-[1700px] mx-auto px-2">
+        <!-- Premium Banner -->
+        <div
+          class="relative overflow-hidden rounded-[20px] border border-white/40 ring-1 ring-[#D7E5DF] shadow-[0_18px_50px_rgba(5,63,55,0.14)] min-h-[60vh]"
+        >
+          <!-- Background Image -->
+          <img
+            src="./Images/aboutbanner.jfif"
+            alt="Sustainable Future"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
 
-                <!-- Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-br from-[#053F37]/75 via-[#0A2E2E]/55 to-transparent"></div>
+          <!-- Overlay -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-[#053F37]/75 via-[#0A2E2E]/55 to-transparent"
+          ></div>
 
-                <!-- Soft Highlight -->
+          <!-- Soft Highlight -->
+          <div
+            class="absolute inset-0 rounded-[12px] border border-white/10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),inset_0_0_80px_rgba(255,255,255,0.04)]"
+          ></div>
+
+          <!-- Content -->
+          <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-14">
+            <div class="grid lg:grid-cols-5 gap-12 items-center min-h-[72vh]">
+              <!-- ================= LEFT CONTENT ================= -->
+
+              <div class="lg:col-span-3">
                 <div
-                    class="absolute inset-0 rounded-[12px] border border-white/10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),inset_0_0_80px_rgba(255,255,255,0.04)]">
+                  class="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-6"
+                >
+                  <span
+                    class="w-2 h-2 bg-[var(--t200)] rounded-full animate-pulse"
+                  ></span>
+                  <span
+                    class="text-xs font-['Azeret_Mono'] uppercase tracking-widest text-white font-medium"
+                  >
+                    About SIEC
+                  </span>
                 </div>
 
-                <!-- Content -->
-                <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-14">
-                    <div class="grid lg:grid-cols-5 gap-12 items-center min-h-[72vh]">
-                        <!-- ================= LEFT CONTENT ================= -->
+                <h1
+                  class="font-['Fraunces'] text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.05] tracking-tighter"
+                >
+                  Building a
+                  <span
+                    class="text-[var(--t200)] font-light font-['Georgia'] italic"
+                    >Greener</span
+                  ><br />
+                  Tomorrow
+                </h1>
 
-                        <div class="lg:col-span-3">
-                            <div
-                                class="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-6">
-                                <span class="w-2 h-2 bg-[var(--t200)] rounded-full animate-pulse"></span>
-                                <span
-                                    class="text-xs font-['Azeret_Mono'] uppercase tracking-widest text-white font-medium">
-                                    About SIEC
-                                </span>
-                            </div>
+                <p class="mt-6 text-white/90 text-lg max-w-xl leading-relaxed">
+                  We are SIEC a team of passionate environmental engineers
+                  dedicated to delivering sustainable water and wastewater
+                  solutions that protect our planet and empower communities.
+                </p>
 
-                            <h1
-                                class="font-['Fraunces'] text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.05] tracking-tighter">
-                                Building a
-                                <span class="text-[var(--t200)] font-light font-['Georgia'] italic">Greener</span><br />
-                                Tomorrow
-                            </h1>
+                <div class="flex flex-wrap gap-4 mt-8">
+                  <!-- Primary Button -->
+                  <a
+                    href="#story"
+                    class="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-[#26AF93] text-white font-medium shadow-[0_10px_30px_rgba(38,175,147,0.35)] transition-all duration-300 hover:bg-[#1f957d] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(38,175,147,0.45)]"
+                  >
+                    <span>Our Story</span>
 
-                            <p class="mt-6 text-white/90 text-lg max-w-xl leading-relaxed">
-                                We are SIEC a team of passionate environmental engineers
-                                dedicated to delivering sustainable water and wastewater
-                                solutions that protect our planet and empower communities.
-                            </p>
+                    <i
+                      class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"
+                    ></i>
+                  </a>
 
-                            <div class="flex flex-wrap gap-4 mt-8">
-                                <!-- Primary Button -->
-                                <a href="#story"
-                                    class="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-[#26AF93] text-white font-medium shadow-[0_10px_30px_rgba(38,175,147,0.35)] transition-all duration-300 hover:bg-[#1f957d] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(38,175,147,0.45)]">
-                                    <span>Our Story</span>
+                  <!-- Secondary Button -->
+                  <a
+                    href="#contact"
+                    class="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white font-medium transition-all duration-300 hover:bg-white hover:text-[#053F37] hover:border-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(255,255,255,0.15)]"
+                  >
+                    <span>Get In Touch</span>
 
-                                    <i
-                                        class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
-                                </a>
+                    <i
+                      class="fa-solid fa-phone text-sm transition-transform duration-300 group-hover:rotate-12"
+                    ></i>
+                  </a>
+                </div>
+              </div>
 
-                                <!-- Secondary Button -->
-                                <a href="#contact"
-                                    class="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white font-medium transition-all duration-300 hover:bg-white hover:text-[#053F37] hover:border-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(255,255,255,0.15)]">
-                                    <span>Get In Touch</span>
+              <!-- ================= RIGHT STATS ================= -->
 
-                                    <i
-                                        class="fa-solid fa-phone text-sm transition-transform duration-300 group-hover:rotate-12"></i>
-                                </a>
-                            </div>
-                        </div>
+              <div class="lg:col-span-2 flex justify-end">
+                <div
+                  class="w-full max-w-md bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[24px] p-7 shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
+                >
+                  <div class="mb-6">
+                    <p
+                      class="text-white/60 uppercase tracking-[0.25em] text-xs"
+                    >
+                      Our Impact
+                    </p>
+                    <h3 class="font-['Fraunces'] text-3xl text-white mt-2">
+                      Numbers that Matter
+                    </h3>
+                  </div>
 
-                        <!-- ================= RIGHT STATS ================= -->
-
-                        <div class="lg:col-span-2 flex justify-end">
-                            <div
-                                class="w-full max-w-md bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[24px] p-7 shadow-[0_15px_40px_rgba(0,0,0,0.18)]">
-                                <div class="mb-6">
-                                    <p class="text-white/60 uppercase tracking-[0.25em] text-xs">
-                                        Our Impact
-                                    </p>
-                                    <h3 class="font-['Fraunces'] text-3xl text-white mt-2">
-                                        Numbers that Matter
-                                    </h3>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-5">
-                                    <div class="border-l-2 border-[#26AF93] pl-4">
-                                        <h4 class="font-['Fraunces'] text-4xl text-white">50+</h4>
-                                        <p class="text-white/70 text-sm mt-1 leading-relaxed">
-                                            Projects Delivered
-                                        </p>
-                                    </div>
-
-                                    <div class="border-l-2 border-[#26AF93] pl-4">
-                                        <h4 class="font-['Fraunces'] text-4xl text-white">15+</h4>
-                                        <p class="text-white/70 text-sm mt-1 leading-relaxed">
-                                            Years Experience
-                                        </p>
-                                    </div>
-
-                                    <div class="border-l-2 border-[#26AF93] pl-4">
-                                        <h4 class="font-['Fraunces'] text-4xl text-white">
-                                            100%
-                                        </h4>
-                                        <p class="text-white/70 text-sm mt-1 leading-relaxed">
-                                            Sustainability Focus
-                                        </p>
-                                    </div>
-
-                                    <div class="border-l-2 border-[#26AF93] pl-4">
-                                        <h4 class="font-['Fraunces'] text-4xl text-white">12</h4>
-                                        <p class="text-white/70 text-sm mt-1 leading-relaxed">
-                                            States Served
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <div class="grid grid-cols-2 gap-5">
+                    <div class="border-l-2 border-[#26AF93] pl-4">
+                      <h4 class="font-['Fraunces'] text-4xl text-white">50+</h4>
+                      <p class="text-white/70 text-sm mt-1 leading-relaxed">
+                        Projects Delivered
+                      </p>
                     </div>
+
+                    <div class="border-l-2 border-[#26AF93] pl-4">
+                      <h4 class="font-['Fraunces'] text-4xl text-white">15+</h4>
+                      <p class="text-white/70 text-sm mt-1 leading-relaxed">
+                        Years Experience
+                      </p>
+                    </div>
+
+                    <div class="border-l-2 border-[#26AF93] pl-4">
+                      <h4 class="font-['Fraunces'] text-4xl text-white">
+                        100%
+                      </h4>
+                      <p class="text-white/70 text-sm mt-1 leading-relaxed">
+                        Sustainability Focus
+                      </p>
+                    </div>
+
+                    <div class="border-l-2 border-[#26AF93] pl-4">
+                      <h4 class="font-['Fraunces'] text-4xl text-white">12</h4>
+                      <p class="text-white/70 text-sm mt-1 leading-relaxed">
+                        States Served
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== STORY + MISSION (Split Layout) ===== -->
+
     <section id="story" class="relative py-12 overflow-hidden bg-[#F8FCFA]">
-        <!-- ===== PREMIUM LEAF WATERMARK WITH CLIPPED IMAGE ===== -->
+      <!-- ===== PREMIUM LEAF WATERMARK (image only, position/rotation untouched) ===== -->
+      <div
+        class="absolute -left-20 bottom-[-20px] lg:left-[-150px] lg:bottom-[-80px] w-[520px] h-[520px] lg:w-[880px] lg:h-[880px] opacity-[0.80] rotate-[-180deg] watermark-wrap"
+      >
+        <img
+          src="./Images/Company-normal-1.png"
+          class="w-full h-full object-contain scale-[1.15] watermark-img"
+          draggable="false"
+        />
+      </div>
+
+      <!-- ===== FULL-SECTION SHADOW OVERLAY (separate layer, spans whole section, no box edges) ===== -->
+      <div
+        class="absolute inset-0 section-shadow-overlay"
+        aria-hidden="true"
+      ></div>
+
+      <!-- ===== CONTENT (naturally centered container) ===== -->
+      <div
+        class="relative z-10 max-w-4xl mx-auto mr-4 px-4 lg:px-8 story-content"
+      >
+        <span
+          class="inline-flex items-center gap-2 text-[11px] font-['Azeret_Mono'] uppercase tracking-[0.25em] text-[var(--mint5)]"
+        >
+          Our Story
+        </span>
+
+        <h2
+          class="font-['Fraunces'] text-3xl md:text-[42px] text-[var(--g500)] mt-4 leading-tight"
+        >
+          Engineering a
+          <span class="text-[#045c49] italic font-semibold">Sustainable</span>
+          Future
+        </h2>
+
         <div
-            class="absolute -left-20 bottom-[-20px] lg:left-[-150px] lg:bottom-[-80px] w-[520px] h-[520px] lg:w-[880px] lg:h-[880px] opacity-[0.80] rotate-[-180deg]">
-            <img src="./Images/company.png" alt="" class="w-full h-full object-contain scale-[1.15]"
-                draggable="false" />
-        </div>
-        <!-- ===== CONTENT ===== -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-8">
-            <div class="grid lg:grid-cols-[38%_62%] items-center gap-4 lg:gap-6">
-                <!-- Empty space for watermark alignment -->
-                <div class="hidden lg:block"></div>
+          class="w-20 h-[3px] rounded-full mt-4 bg-gradient-to-r from-[#283F24] via-[#2B5748] via-[#359D62] to-[#B7EBDE]"
+        ></div>
 
-                <!-- Content -->
-                <div class="max-w-xl lg:max-w-2xl">
-                    <span
-                        class="inline-flex items-center gap-2 text-[11px] font-['Azeret_Mono'] uppercase tracking-[0.25em] text-[#26AF93]">
-                        <span class="w-2 h-2 rounded-full bg-[#26AF93]"></span>
-                        Our Story
-                    </span>
+        <p class="mt-5 story-text leading-8">
+          SIEC delivers sustainable environmental engineering solutions focused
+          on water, wastewater, environmental compliance and infrastructure
+          development. We combine technical expertise, innovation and
+          responsible engineering to create long-term environmental value.
+        </p>
 
-                    <h2 class="font-['Fraunces'] text-3xl md:text-[42px] text-[#112A23] mt-4 leading-tight">
-                        Engineering a
-                        <span class="text-[#26AF93] italic font-semibold">Sustainable</span>
-                        Future
-                    </h2>
-
-                    <div class="w-16 h-1 bg-gradient-to-r from-[#26AF93] to-[#86DBC8] rounded-full mt-4"></div>
-
-                    <p class="mt-5 text-[#48675B] leading-8">
-                        SIEC delivers sustainable environmental engineering solutions
-                        focused on water, wastewater, environmental compliance and
-                        infrastructure development. We combine technical expertise,
-                        innovation and responsible engineering to create long-term
-                        environmental value.
-                    </p>
-
-                    <!-- Mission & Vision -->
-                    <div class="grid md:grid-cols-2 gap-4 mt-2">
-                        <!-- Mission -->
-                        <div
-                            class="group bg-white rounded-xl border border-[#E4EFEB] p-3 transition duration-300 hover:border-[#26AF93] hover:shadow-[0_8px_30px_rgba(38,175,147,0.08)] hover:-translate-y-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-[#26AF93]/10 flex items-center justify-center group-hover:bg-[#26AF93] transition-colors duration-300">
-                                    <i
-                                        class="fa-solid fa-bullseye text-[#26AF93] group-hover:text-white transition-colors duration-300"></i>
-                                </div>
-                                <h3 class="font-['Fraunces'] text-xl text-[#112A23]">
-                                    Mission
-                                </h3>
-                            </div>
-                            <p class="text-sm text-[#48675B] leading-6">
-                                Deliver innovative and sustainable environmental solutions
-                                that create measurable impact.
-                            </p>
-                        </div>
-
-                        <!-- Vision -->
-                        <div
-                            class="group bg-white rounded-xl border border-[#E4EFEB] p-3 transition duration-300 hover:border-[#26AF93] hover:shadow-[0_8px_30px_rgba(38,175,147,0.08)] hover:-translate-y-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-[#26AF93]/10 flex items-center justify-center group-hover:bg-[#26AF93] transition-colors duration-300">
-                                    <i
-                                        class="fa-regular fa-eye text-[#26AF93] group-hover:text-white transition-colors duration-300"></i>
-                                </div>
-                                <h3 class="font-['Fraunces'] text-xl text-[#112A23]">
-                                    Vision
-                                </h3>
-                            </div>
-                            <p class="text-sm text-[#48675B] leading-6">
-                                Become India's trusted environmental consulting partner
-                                through innovation and sustainability.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Stats / Trust indicators -->
-                    <div class="flex flex-wrap items-center gap-6 mt-6 pt-4 border-t border-[#DCEBE4]">
-                        <div class="flex items-center gap-3">
-                            <span class="font-['Fraunces'] text-2xl font-semibold text-[#26AF93]">15+</span>
-                            <span class="text-[#48675B] text-sm">Years Experience</span>
-                        </div>
-                        <div class="w-px h-8 bg-[#DCEBE4]"></div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-['Fraunces'] text-2xl font-semibold text-[#26AF93]">50+</span>
-                            <span class="text-[#48675B] text-sm">Projects</span>
-                        </div>
-                        <div class="w-px h-8 bg-[#DCEBE4]"></div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-['Fraunces'] text-2xl font-semibold text-[#26AF93]">100%</span>
-                            <span class="text-[#48675B] text-sm">Client Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Mission & Vision -->
+        <div class="grid md:grid-cols-2 gap-4 mt-2">
+          <!-- Mission -->
+          <div
+            class="group story-card rounded-xl border border-[#E4EFEB] p-3 transition duration-300 hover:border-[#26AF93] hover:shadow-[0_8px_30px_rgba(38,175,147,0.08)] hover:-translate-y-1"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-[#26AF93]/10 flex items-center justify-center group-hover:bg-[#26AF93] transition-colors duration-300"
+              >
+                <i
+                  class="fa-solid fa-bullseye text-[#26AF93] group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="font-['Fraunces'] text-xl text-[#112A23]">Mission</h3>
             </div>
+            <p class="text-sm story-text leading-6">
+              Deliver innovative and sustainable environmental solutions that
+              create measurable impact.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div
+            class="group story-card rounded-xl border border-[#E4EFEB] p-3 transition duration-300 hover:border-[#26AF93] hover:shadow-[0_8px_30px_rgba(38,175,147,0.08)] hover:-translate-y-1"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-[#26AF93]/10 flex items-center justify-center group-hover:bg-[#26AF93] transition-colors duration-300"
+              >
+                <i
+                  class="fa-regular fa-eye text-[#26AF93] group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="font-['Fraunces'] text-xl text-[#112A23]">Vision</h3>
+            </div>
+            <p class="text-sm story-text leading-6">
+              Become India's trusted environmental consulting partner through
+              innovation and sustainability.
+            </p>
+          </div>
         </div>
 
-        <style>
-            /* Responsive watermark sizing */
-            @media (max-width: 1024px) {
-                .watermark-leaf {
-                    width: 500px;
-                    height: 500px;
-                    bottom: -40px;
-                    left: -40px;
-                }
-            }
+        <!-- Stats / Trust indicators -->
+        <div
+          class="flex flex-wrap items-center gap-6 mt-6 pt-4 border-t border-[#DCEBE4]"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              class="font-['Fraunces'] text-2xl font-semibold text-[#045c49]"
+              >15+</span
+            >
+            <span class="text-sm story-text">Years Experience</span>
+          </div>
+          <div class="w-px h-8 bg-[#DCEBE4]"></div>
+          <div class="flex items-center gap-3">
+            <span
+              class="font-['Fraunces'] text-2xl font-semibold text-[#045c49]"
+              >50+</span
+            >
+            <span class="text-sm story-text">Projects</span>
+          </div>
+          <div class="w-px h-8 bg-[#DCEBE4]"></div>
+          <div class="flex items-center gap-3">
+            <span
+              class="font-['Fraunces'] text-2xl font-semibold text-[#045c49]"
+              >100%</span
+            >
+            <span class="text-sm story-text">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
 
-            @media (max-width: 768px) {
-                .watermark-leaf {
-                    width: 350px;
-                    height: 350px;
-                    bottom: -20px;
-                    left: -30px;
-                    opacity: 0.06;
-                }
-            }
-        </style>
+      <style>
+        /* ===== FULL-SECTION SHADOW OVERLAY ===== */
+        /* .section-shadow-overlay {
+                position: absolute;
+                inset: 0;
+                z-index: 5;
+                pointer-events: none;
+
+                background: linear-gradient(90deg,
+                        rgba(24, 38, 22, .58) 0%,
+                        rgba(40, 63, 36, .48) 15%,
+                        rgba(70, 114, 53, .36) 20%,
+                        rgba(43, 87, 72, .26) 45%,
+                        rgba(38, 175, 147, .16) 62%,
+                        rgba(134, 219, 200, .08) 80%,
+                        rgba(248, 252, 250, 0) 100%);
+            } */
+
+        .watermark-img {
+          opacity: 0.8;
+          filter: brightness(1.08) saturate(1.05);
+          transition: 0.4s ease;
+        }
+
+        /* ===== TEXT VISIBILITY (darker gray, reads clearly over shadow + white areas) ===== */
+        .story-text {
+          color: #25362f;
+          font-weight: 500;
+        }
+
+        /* ===== CARDS: slightly transparent + subtle blur so their bg opacity
+           matches the shadow/leaf behind them instead of sitting as flat white boxes ===== */
+        .story-card {
+          background: rgba(255, 255, 255, 0.72);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+        }
+
+        .story-card:hover {
+          background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Responsive watermark sizing */
+        @media (max-width: 1024px) {
+          .watermark-leaf {
+            width: 500px;
+            height: 500px;
+            bottom: -40px;
+            left: -40px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .watermark-leaf {
+            width: 350px;
+            height: 350px;
+            bottom: -20px;
+            left: -30px;
+            opacity: 0.06;
+          }
+
+          .section-shadow-overlay {
+            background: linear-gradient(
+              180deg,
+              rgba(6, 15, 12, 0.749) 0%,
+              rgba(12, 30, 24, 0.35) 30%,
+              rgba(38, 175, 147, 0.12) 55%,
+              rgba(38, 175, 147, 0) 75%
+            );
+          }
+
+          .story-content {
+            text-align: left;
+          }
+        }
+      </style>
     </section>
 
     <!-- ================ Founder ========================== -->
-    <section id="founder"
-        class="relative py-14 overflow-hidden bg-[linear-gradient(135deg,#062D2A_0%,#0A3F39_35%,#0F5D54_70%,#0A7563_100%)] text-white">
-
-        <!-- Premium Grid Pattern -->
-        <div class="absolute inset-0 opacity-[0.10] pointer-events-none" style="
+    <section
+      id="founder"
+      class="relative py-14 overflow-hidden bg-[linear-gradient(135deg,#062D2A_0%,#0A3F39_35%,#0F5D54_70%,#0A7563_100%)] text-white"
+    >
+      <!-- Premium Grid Pattern -->
+      <div
+        class="absolute inset-0 opacity-[0.10] pointer-events-none"
+        style="
           background-image:
             linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
             linear-gradient(
@@ -462,392 +582,500 @@
               transparent 1px
             );
           background-size: 60px 60px;
-        "></div>
+        "
+      ></div>
 
-        <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-16 items-center">
-                <!-- Left: Founder Photo -->
-                <div class="lg:col-span-5">
-                    <div
-                        class="relative rounded-3xl overflow-hidden border border-white/60 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.06),0_20px_45px_rgba(17,42,35,0.10),0_35px_70px_rgba(38,175,147,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(0,0,0,0.08),0_28px_60px_rgba(17,42,35,0.14),0_45px_90px_rgba(38,175,147,0.12)]">
-                        <!-- Soft top highlight -->
-                        <div class="absolute inset-0 rounded-3xl ring-1 ring-white/40"></div>
+      <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+          <!-- Left: Founder Photo -->
+          <div class="lg:col-span-5">
+            <div
+              class="relative rounded-3xl overflow-hidden border border-white/60 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.06),0_20px_45px_rgba(17,42,35,0.10),0_35px_70px_rgba(38,175,147,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(0,0,0,0.08),0_28px_60px_rgba(17,42,35,0.14),0_45px_90px_rgba(38,175,147,0.12)]"
+            >
+              <!-- Soft top highlight -->
+              <div
+                class="absolute inset-0 rounded-3xl ring-1 ring-white/40"
+              ></div>
 
-                        <!-- Image -->
-                        <img src="./Images/founder.png" alt="Amit Gandhe" class="w-full h-full object-cover" />
+              <!-- Image -->
+              <img
+                src="./Images/founder.png"
+                alt="Amit Gandhe"
+                class="w-full h-full object-cover"
+              />
 
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Message -->
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="flex items-center gap-3">
-                        <div class="h-px w-12 bg-[#26AF93]"></div>
-                        <span class="uppercase text-xs tracking-[2px] font-['Azeret_Mono'] text-[#53C8AF]">FOUNDER'S
-                            MESSAGE</span>
-                    </div>
-
-                    <h2 class="font-['Fraunces'] text-[var(--sage)] text-4xl md:text-5xl font-semibold leading-tight">
-                        Leading with Purpose &amp; Passion for Sustainability
-                    </h2>
-
-                    <div class="prose prose-invert max-w-none text-white/80 text-sm leading-relaxed space-y-4">
-                        <p>
-                            With nearly two decades of international experience in
-                            environmental engineering, infrastructure development, project
-                            management, and sustainable water solutions. Having led major
-                            water infrastructure projects across Singapore, the Middle East,
-                            and other global regions, his vision has always been to create
-                            practical, innovative, and environmentally responsible solutions
-                            that deliver long-term value to communities.clear mission to
-                            bridge the gap between development and environmental
-                            responsibility.
-                        </p>
-                        <p>
-                            Throughout his professional journey, Amit observed that many
-                            transformative sustainability concepts never progressed beyond
-                            the planning stage. Innovative ideas were often constrained by
-                            organizational processes, limited awareness, budget
-                            considerations, and uncertainty surrounding their long-term
-                            benefits. Recognizing this gap inspired the creation of
-                            Sustainable Integrated Environmental Consultants (SIEC)—an
-                            organization dedicated to transforming visionary environmental
-                            concepts into practical, measurable, and impactful solutions
-                            that benefit both society and the environment.
-                        </p>
-                        <p>
-                            Sustainability is at the core of every solution delivered by
-                            SIEC. The company integrates advanced technologies such as IoT,
-                            smart monitoring systems, and energy-efficient engineering to
-                            optimize infrastructure performance while reducing environmental
-                            impact.
-                        </p>
-                    </div>
-
-                    <!-- Founder Info + Social -->
-                    <div
-                        class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-
-                        <!-- Name -->
-                        <div>
-                            <p class="font-['Fraunces'] text-2xl text-white">
-                                Amit Gandhe
-                            </p>
-
-                            <p class="text-[#53C8AF] italic text-sm tracking-wide mt-1">
-                                Founder &amp; Managing Director
-                            </p>
-                        </div>
-
-                        <!-- Social Icons -->
-                        <div class="flex items-center gap-3">
-
-                            <!-- LinkedIn -->
-                            <a href="#"
-                                class="group w-11 h-11 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center transition-all duration-300 hover:bg-[#26AF93] hover:border-[#26AF93] hover:-translate-y-1">
-                                <i class="fa-brands fa-linkedin-in text-white/80 group-hover:text-white"></i>
-                            </a>
-
-                            <!-- Facebook -->
-                            <a href="#"
-                                class="group w-11 h-11 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center transition-all duration-300 hover:bg-[#26AF93] hover:border-[#26AF93] hover:-translate-y-1">
-                                <i class="fa-brands fa-facebook-f text-white/80 group-hover:text-white"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
+              <!-- Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"
+              ></div>
             </div>
+          </div>
+
+          <!-- Right: Message -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="flex items-center gap-3">
+              <div class="h-px w-12 bg-[#26AF93]"></div>
+              <span
+                class="uppercase text-xs tracking-[2px] font-['Azeret_Mono'] text-[#53C8AF]"
+                >FOUNDER'S MESSAGE</span
+              >
+            </div>
+
+            <h2
+              class="font-['Fraunces'] text-[var(--sage)] text-4xl md:text-5xl font-semibold leading-tight"
+            >
+              Leading with Purpose &amp; Passion for Sustainability
+            </h2>
+
+            <div
+              class="prose prose-invert max-w-none text-white/80 text-sm leading-relaxed space-y-4"
+            >
+              <p>
+                With nearly two decades of international experience in
+                environmental engineering, infrastructure development, project
+                management, and sustainable water solutions. Having led major
+                water infrastructure projects across Singapore, the Middle East,
+                and other global regions, his vision has always been to create
+                practical, innovative, and environmentally responsible solutions
+                that deliver long-term value to communities.clear mission to
+                bridge the gap between development and environmental
+                responsibility.
+              </p>
+              <p>
+                Throughout his professional journey, Amit observed that many
+                transformative sustainability concepts never progressed beyond
+                the planning stage. Innovative ideas were often constrained by
+                organizational processes, limited awareness, budget
+                considerations, and uncertainty surrounding their long-term
+                benefits. Recognizing this gap inspired the creation of
+                Sustainable Integrated Environmental Consultants (SIEC)—an
+                organization dedicated to transforming visionary environmental
+                concepts into practical, measurable, and impactful solutions
+                that benefit both society and the environment.
+              </p>
+              <p>
+                Sustainability is at the core of every solution delivered by
+                SIEC. The company integrates advanced technologies such as IoT,
+                smart monitoring systems, and energy-efficient engineering to
+                optimize infrastructure performance while reducing environmental
+                impact.
+              </p>
+            </div>
+
+            <!-- Founder Info + Social -->
+            <div
+              class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+            >
+              <!-- Name -->
+              <div>
+                <p class="font-['Fraunces'] text-2xl text-white">Amit Gandhe</p>
+
+                <p class="text-[#53C8AF] italic text-sm tracking-wide mt-1">
+                  Founder &amp; Managing Director
+                </p>
+              </div>
+
+              <!-- Social Icons -->
+              <div class="flex items-center gap-3">
+                <!-- LinkedIn -->
+                <a
+                  href="#"
+                  class="group w-11 h-11 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center transition-all duration-300 hover:bg-[#26AF93] hover:border-[#26AF93] hover:-translate-y-1"
+                >
+                  <i
+                    class="fa-brands fa-linkedin-in text-white/80 group-hover:text-white"
+                  ></i>
+                </a>
+
+                <!-- Facebook -->
+                <a
+                  href="#"
+                  class="group w-11 h-11 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center transition-all duration-300 hover:bg-[#26AF93] hover:border-[#26AF93] hover:-translate-y-1"
+                >
+                  <i
+                    class="fa-brands fa-facebook-f text-white/80 group-hover:text-white"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== VALUES (Row Layout) ===== -->
     <section class="relative py-8 overflow-hidden bg-[var(--mint)]">
+      <!-- Slanting Lines Texture -->
+      <div
+        class="absolute inset-0 opacity-80 pointer-events-none"
+        style="
+          background: linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 48%,
+            rgba(38, 175, 147, 0.06) 50%,
+            transparent 52%,
+            transparent 100%
+          );
+          background-size: 60px 60px;
+        "
+      ></div>
 
-        <!-- Slanting Lines Texture -->
-        <div class="absolute inset-0 opacity-80 pointer-events-none" style="background: 
-         linear-gradient(135deg, 
-           transparent 0%, 
-           transparent 48%, 
-           rgba(38,175,147,0.06) 50%, 
-           transparent 52%, 
-           transparent 100%);
-         background-size: 60px 60px;">
+      <div class="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-6">
+          <span
+            class="text-[10px] font-['Azeret_Mono'] text-[#26AF93] tracking-[0.2em] uppercase font-medium"
+            >OUR VALUES</span
+          >
+          <h2
+            class="font-['Fraunces'] text-3xl font-semibold text-[var(--teal-deep)] mt-2"
+          >
+            What
+            <span class="text-[#26AF93] font-['Georgia'] italic">Guides</span>
+            Us
+          </h2>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
-
-            <div class="text-center max-w-2xl mx-auto mb-6">
-                <span class="text-[10px] font-['Azeret_Mono'] text-[#26AF93] tracking-[0.2em] uppercase font-medium">OUR
-                    VALUES</span>
-                <h2 class="font-['Fraunces'] text-3xl font-semibold text-[var(--teal-deep)] mt-2">
-                    What <span class="text-[#26AF93] font-['Georgia']  italic">Guides</span> Us
-                </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Value 1 -->
+          <div
+            class="group relative bg-white rounded-2xl p-6 border border-[#EAF4EF] hover:border-[#26AF93] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(38,175,147,0.08)] hover:-translate-y-1"
+          >
+            <div
+              class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 rounded-r-full bg-[#26AF93] opacity-30 group-hover:opacity-100 group-hover:h-16 transition-all"
+            ></div>
+            <div class="flex items-center gap-3 mb-4">
+              <i class="fa-solid fa-lightbulb text-[#26AF93] text-xl"></i>
+              <h4 class="font-['Fraunces'] font-semibold text-[#112A23]">
+                Purpose-Driven Innovation
+              </h4>
             </div>
+            <p class="text-[#48675B] text-sm leading-relaxed">
+              IoT, energy-efficient design, and smart monitoring are built into
+              every solution, keeping resource use and impact measurable in real
+              time.
+            </p>
+          </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-
-                <!-- Value 1 -->
-                <div
-                    class="group relative bg-white rounded-2xl p-6 border border-[#EAF4EF] hover:border-[#26AF93] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(38,175,147,0.08)] hover:-translate-y-1">
-                    <div
-                        class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 rounded-r-full bg-[#26AF93] opacity-30 group-hover:opacity-100 group-hover:h-16 transition-all">
-                    </div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-lightbulb text-[#26AF93] text-xl"></i>
-                        <h4 class="font-['Fraunces'] font-semibold text-[#112A23]">Purpose-Driven Innovation</h4>
-                    </div>
-                    <p class="text-[#48675B] text-sm leading-relaxed">
-                        IoT, energy-efficient design, and smart monitoring are built into every solution, keeping
-                        resource use and impact measurable in real time.
-                    </p>
-                </div>
-
-                <!-- Value 2 -->
-                <div
-                    class="group relative bg-white rounded-2xl p-6 border border-[#EAF4EF] hover:border-[#26AF93] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(38,175,147,0.08)] hover:-translate-y-1">
-                    <div
-                        class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 rounded-r-full bg-[#26AF93] opacity-30 group-hover:opacity-100 group-hover:h-16 transition-all">
-                    </div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-handshake text-[#26AF93] text-xl"></i>
-                        <h4 class="font-['Fraunces'] font-semibold text-[#112A23]">Partners in Sustainability</h4>
-                    </div>
-                    <p class="text-[#48675B] text-sm leading-relaxed">
-                        Clients are treated as partners on a shared journey, building relationships that outlast any
-                        single project and combine global expertise with local insight.
-                    </p>
-                </div>
-
-                <!-- Value 3 -->
-                <div
-                    class="group relative bg-white rounded-2xl p-6 border border-[#EAF4EF] hover:border-[#26AF93] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(38,175,147,0.08)] hover:-translate-y-1">
-                    <div
-                        class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 rounded-r-full bg-[#26AF93] opacity-30 group-hover:opacity-100 group-hover:h-16 transition-all">
-                    </div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-seedling text-[#26AF93] text-xl"></i>
-                        <h4 class="font-['Fraunces'] font-semibold text-[#112A23]">A Vision of Growth</h4>
-                    </div>
-                    <p class="text-[#48675B] text-sm leading-relaxed">
-                        SEIC continues to expand into new markets and technologies, helping more communities thrive
-                        through responsible stewardship and innovation.
-                    </p>
-                </div>
-
+          <!-- Value 2 -->
+          <div
+            class="group relative bg-white rounded-2xl p-6 border border-[#EAF4EF] hover:border-[#26AF93] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(38,175,147,0.08)] hover:-translate-y-1"
+          >
+            <div
+              class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 rounded-r-full bg-[#26AF93] opacity-30 group-hover:opacity-100 group-hover:h-16 transition-all"
+            ></div>
+            <div class="flex items-center gap-3 mb-4">
+              <i class="fa-solid fa-handshake text-[#26AF93] text-xl"></i>
+              <h4 class="font-['Fraunces'] font-semibold text-[#112A23]">
+                Partners in Sustainability
+              </h4>
             </div>
+            <p class="text-[#48675B] text-sm leading-relaxed">
+              Clients are treated as partners on a shared journey, building
+              relationships that outlast any single project and combine global
+              expertise with local insight.
+            </p>
+          </div>
+
+          <!-- Value 3 -->
+          <div
+            class="group relative bg-white rounded-2xl p-6 border border-[#EAF4EF] hover:border-[#26AF93] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(38,175,147,0.08)] hover:-translate-y-1"
+          >
+            <div
+              class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 rounded-r-full bg-[#26AF93] opacity-30 group-hover:opacity-100 group-hover:h-16 transition-all"
+            ></div>
+            <div class="flex items-center gap-3 mb-4">
+              <i class="fa-solid fa-seedling text-[#26AF93] text-xl"></i>
+              <h4 class="font-['Fraunces'] font-semibold text-[#112A23]">
+                A Vision of Growth
+              </h4>
+            </div>
+            <p class="text-[#48675B] text-sm leading-relaxed">
+              SEIC continues to expand into new markets and technologies,
+              helping more communities thrive through responsible stewardship
+              and innovation.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-
 
     <!----========================= JOURNEY  =============================== --->
 
     <section class="relative py-12 bg-[#F8FCFA] overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 pointer-events-none">
+        <img
+          src="./Images/background.png"
+          alt="Background"
+          class="w-full h-full object-cover opacity-[0.50]"
+        />
+      </div>
 
-        <!-- Background Image -->
-        <div class="absolute inset-0 pointer-events-none">
-            <img src="./Images/background.png" alt="Background" class="w-full h-full object-cover opacity-[0.50]" />
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Heading -->
+        <div class="text-center">
+          <div
+            class="inline-flex items-center gap-2 px-2 py-1.5 rounded-full bg-[#D8F6EE] border border-[#B7EBDE] mb-2 md:mb-3"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-[#26AF93]"></span>
+            <span
+              class="text-[9px] md:text-[10px] font-['Azeret_Mono'] text-[#0F8F78] tracking-[0.2em] uppercase font-medium"
+            >
+              Our Journey
+            </span>
+          </div>
+
+          <h2
+            class="font-['Fraunces'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#112A23] tracking-tight"
+          >
+            <span class="text-[#112A23]">Years of</span>
+            <span class="text-[#26AF93] italic"> Excellence</span>
+          </h2>
+
+          <p
+            class="mt-3 md:mt-4 text-[#48675B] text-sm md:text-base max-w-2xl mx-auto leading-relaxed md:leading-8 px-4"
+          >
+            A journey driven by innovation, sustainability and engineering
+            excellence.
+          </p>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <!-- Heading -->
-            <div class="text-center">
-                <div
-                    class="inline-flex items-center gap-2 px-2 py-1.5 rounded-full bg-[#D8F6EE] border border-[#B7EBDE] mb-2 md:mb-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#26AF93]"></span>
-                    <span
-                        class="text-[9px] md:text-[10px] font-['Azeret_Mono'] text-[#0F8F78] tracking-[0.2em] uppercase font-medium">
-                        Our Journey
-                    </span>
-                </div>
-
-                <h2
-                    class="font-['Fraunces'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#112A23] tracking-tight">
-                    <span class="text-[#112A23]">Years of</span>
-                    <span class="text-[#26AF93] italic"> Excellence</span>
-                </h2>
-
-                <p
-                    class="mt-3 md:mt-4 text-[#48675B] text-sm md:text-base max-w-2xl mx-auto leading-relaxed md:leading-8 px-4">
-                    A journey driven by innovation, sustainability and engineering excellence.
-                </p>
-            </div>
-
-            <div class="relative">
-
-                <!-- Dotted SVG Path - Hidden on mobile -->
-                <svg class="absolute left-0 top-2 w-full h-56 hidden lg:block pointer-events-none"
-                    viewBox="0 0 1200 250" preserveAspectRatio="none">
-                    <path d="M50 70
+        <div class="relative">
+          <!-- Dotted SVG Path - Hidden on mobile -->
+          <svg
+            class="absolute left-0 top-2 w-full h-56 hidden lg:block pointer-events-none"
+            viewBox="0 0 1200 250"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M50 70
                        C180 -20 260 180 420 120
                        S650 210 790 90
-                       S980 -10 1150 100" fill="none" stroke="#26AF93" stroke-width="2.5" stroke-linecap="round"
-                        stroke-dasharray="8 10" opacity="0.4" />
-                </svg>
+                       S980 -10 1150 100"
+              fill="none"
+              stroke="#26AF93"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-dasharray="8 10"
+              opacity="0.4"
+            />
+          </svg>
 
-                <!-- Icons - Hidden on mobile -->
-                <div class="hidden lg:block absolute left-[4%] top-[18px]">
-                    <div
-                        class="w-12 h-12 rounded-full bg-[#D8F6EE] border-2 border-[#26AF93] flex items-center justify-center shadow-lg shadow-[#26AF93]/10">
-                        <i class="fa-solid fa-seedling text-[#26AF93] text-lg"></i>
-                    </div>
-                </div>
+          <!-- Icons - Hidden on mobile -->
+          <div class="hidden lg:block absolute left-[4%] top-[18px]">
+            <div
+              class="w-12 h-12 rounded-full bg-[#D8F6EE] border-2 border-[#26AF93] flex items-center justify-center shadow-lg shadow-[#26AF93]/10"
+            >
+              <i class="fa-solid fa-seedling text-[#26AF93] text-lg"></i>
+            </div>
+          </div>
 
-                <div class="hidden lg:block absolute left-[28%] top-[92px]">
-                    <div
-                        class="w-12 h-12 rounded-full bg-[#EAF7F2] border-2 border-[#53C8AF] flex items-center justify-center shadow-lg shadow-[#53C8AF]/10">
-                        <i class="fa-solid fa-chart-line text-[#53C8AF] text-lg"></i>
-                    </div>
-                </div>
+          <div class="hidden lg:block absolute left-[28%] top-[92px]">
+            <div
+              class="w-12 h-12 rounded-full bg-[#EAF7F2] border-2 border-[#53C8AF] flex items-center justify-center shadow-lg shadow-[#53C8AF]/10"
+            >
+              <i class="fa-solid fa-chart-line text-[#53C8AF] text-lg"></i>
+            </div>
+          </div>
 
-                <div class="hidden lg:block absolute left-[50%] top-[132px]">
-                    <div
-                        class="w-12 h-12 rounded-full bg-[#EAF7F2] border-2 border-[#86DBC8] flex items-center justify-center shadow-lg shadow-[#86DBC8]/10">
-                        <i class="fa-solid fa-globe text-[#86DBC8] text-lg"></i>
-                    </div>
-                </div>
+          <div class="hidden lg:block absolute left-[50%] top-[132px]">
+            <div
+              class="w-12 h-12 rounded-full bg-[#EAF7F2] border-2 border-[#86DBC8] flex items-center justify-center shadow-lg shadow-[#86DBC8]/10"
+            >
+              <i class="fa-solid fa-globe text-[#86DBC8] text-lg"></i>
+            </div>
+          </div>
 
-                <div class="hidden lg:block absolute left-[74%] top-[16px]">
-                    <div
-                        class="w-12 h-12 rounded-full bg-[#D8F6EE] border-2 border-[#26AF93] flex items-center justify-center shadow-lg shadow-[#26AF93]/10">
-                        <i class="fa-solid fa-lightbulb text-[#26AF93] text-lg"></i>
-                    </div>
-                </div>
+          <div class="hidden lg:block absolute left-[74%] top-[16px]">
+            <div
+              class="w-12 h-12 rounded-full bg-[#D8F6EE] border-2 border-[#26AF93] flex items-center justify-center shadow-lg shadow-[#26AF93]/10"
+            >
+              <i class="fa-solid fa-lightbulb text-[#26AF93] text-lg"></i>
+            </div>
+          </div>
 
-                <div class="hidden lg:block absolute right-[3%] top-[58px]">
-                    <div
-                        class="w-12 h-12 rounded-full bg-[#26AF93] border-2 border-[#26AF93] flex items-center justify-center shadow-lg shadow-[#26AF93]/30">
-                        <i class="fa-solid fa-earth-asia text-white text-lg"></i>
-                    </div>
-                </div>
+          <div class="hidden lg:block absolute right-[3%] top-[58px]">
+            <div
+              class="w-12 h-12 rounded-full bg-[#26AF93] border-2 border-[#26AF93] flex items-center justify-center shadow-lg shadow-[#26AF93]/30"
+            >
+              <i class="fa-solid fa-earth-asia text-white text-lg"></i>
+            </div>
+          </div>
 
-                <!-- Cards - Responsive Grid -->
+          <!-- Cards - Responsive Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 relative z-10 pt-8 sm:pt-12 lg:pt-24"
+          >
+            <!-- Card 1: Foundation -->
+            <div class="flex flex-col items-center">
+              <div class="flex items-center gap-2 mb-3 md:mb-4">
+                <span
+                  class="text-[10px] font-['Azeret_Mono'] text-[#26AF93] font-bold"
+                  >01</span
+                >
+                <h3
+                  class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]"
+                >
+                  Foundation
+                </h3>
+              </div>
+              <div
+                class="w-full bg-gradient-to-b from-[#26AF93] to-[#0F8F78] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[220px] md:h-[280px] lg:h-[320px] flex flex-col justify-end shadow-xl shadow-[#26AF93]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(38,175,147,0.25)]"
+              >
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 relative z-10 pt-8 sm:pt-12 lg:pt-24">
-
-                    <!-- Card 1: Foundation -->
-                    <div class="flex flex-col items-center">
-                        <div class="flex items-center gap-2 mb-3 md:mb-4">
-                            <span class="text-[10px] font-['Azeret_Mono'] text-[#26AF93] font-bold">01</span>
-                            <h3 class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]">
-                                Foundation
-                            </h3>
-                        </div>
-                        <div
-                            class="w-full bg-gradient-to-b from-[#26AF93] to-[#0F8F78] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[220px] md:h-[280px] lg:h-[320px] flex flex-col justify-end shadow-xl shadow-[#26AF93]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(38,175,147,0.25)]">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4">
-                                <i class="fa-solid fa-seedling text-white text-sm md:text-base"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90">
-                                Established with a vision to deliver sustainable environmental
-                                engineering solutions that create lasting value for communities
-                                and industries.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Growth -->
-                    <div class="flex flex-col items-center sm:mt-0 lg:mt-14">
-                        <div class="flex items-center gap-2 mb-3 md:mb-4">
-                            <span class="text-[10px] font-['Azeret_Mono'] text-[#53C8AF] font-bold">02</span>
-                            <h3 class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]">
-                                Growth
-                            </h3>
-                        </div>
-                        <div
-                            class="w-full bg-gradient-to-b from-[#53C8AF] to-[#86DBC8] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[200px] md:h-[240px] lg:h-[260px] flex flex-col justify-end shadow-xl shadow-[#53C8AF]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(83,200,175,0.25)]">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4">
-                                <i class="fa-solid fa-chart-line text-white text-sm md:text-base"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90">
-                                Expanded our expertise in water, wastewater, environmental
-                                compliance and sustainable infrastructure development.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Expansion -->
-                    <div class="flex flex-col items-center sm:mt-0 lg:mt-28">
-                        <div class="flex items-center gap-2 mb-3 md:mb-4">
-                            <span class="text-[10px] font-['Azeret_Mono'] text-[#86DBC8] font-bold">03</span>
-                            <h3 class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]">
-                                Expansion
-                            </h3>
-                        </div>
-                        <div
-                            class="w-full bg-gradient-to-b from-[#D8F6EE] to-[#EAF7F2] rounded-2xl md:rounded-3xl p-5 md:p-7 text-[#112A23] min-h-[160px] md:h-[180px] lg:h-[180px] flex flex-col justify-end shadow-xl shadow-[#86DBC8]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(134,219,200,0.2)]">
-                            <div
-                                class="w-10 h-10 rounded-full bg-[#26AF93]/10 flex items-center justify-center mb-3 md:mb-4">
-                                <i class="fa-solid fa-globe text-[#26AF93] text-sm md:text-base"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm leading-relaxed md:leading-7 text-[#48675B]">
-                                Successfully executed environmental projects across diverse sectors.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Innovation -->
-                    <div class="flex flex-col items-center sm:mt-0 lg:mt-14">
-                        <div class="flex items-center gap-2 mb-3 md:mb-4">
-                            <span class="text-[10px] font-['Azeret_Mono'] text-[#53C8AF] font-bold">04</span>
-                            <h3 class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]">
-                                Innovation
-                            </h3>
-                        </div>
-                        <div
-                            class="w-full bg-gradient-to-b from-[#53C8AF] to-[#86DBC8] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[200px] md:h-[240px] lg:h-[260px] flex flex-col justify-end shadow-xl shadow-[#53C8AF]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(83,200,175,0.25)]">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4">
-                                <i class="fa-solid fa-lightbulb text-white text-sm md:text-base"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90">
-                                Leveraging modern engineering practices and innovation to build
-                                efficient, future-ready environmental solutions.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: Towards the Future -->
-                    <div class="flex flex-col items-center sm:col-span-2 lg:col-span-1">
-                        <div class="flex items-center gap-2 mb-3 md:mb-4">
-                            <span class="text-[10px] font-['Azeret_Mono'] text-[#26AF93] font-bold">05</span>
-                            <h3 class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]">
-                                Towards the Future
-                            </h3>
-                        </div>
-                        <div
-                            class="w-full bg-gradient-to-b from-[#26AF93] to-[#0F8F78] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[220px] md:h-[280px] lg:h-[320px] flex flex-col justify-end shadow-xl shadow-[#26AF93]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(38,175,147,0.25)]">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4">
-                                <i class="fa-solid fa-earth-asia text-white text-sm md:text-base"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90">
-                                Continuing our mission to create resilient communities through
-                                sustainable engineering, environmental stewardship and long-term
-                                innovation.
-                            </p>
-                        </div>
-                    </div>
-
+                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4"
+                >
+                  <i
+                    class="fa-solid fa-seedling text-white text-sm md:text-base"
+                  ></i>
                 </div>
-
+                <p
+                  class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90"
+                >
+                  Established with a vision to deliver sustainable environmental
+                  engineering solutions that create lasting value for
+                  communities and industries.
+                </p>
+              </div>
             </div>
 
+            <!-- Card 2: Growth -->
+            <div class="flex flex-col items-center sm:mt-0 lg:mt-14">
+              <div class="flex items-center gap-2 mb-3 md:mb-4">
+                <span
+                  class="text-[10px] font-['Azeret_Mono'] text-[#53C8AF] font-bold"
+                  >02</span
+                >
+                <h3
+                  class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]"
+                >
+                  Growth
+                </h3>
+              </div>
+              <div
+                class="w-full bg-gradient-to-b from-[#53C8AF] to-[#86DBC8] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[200px] md:h-[240px] lg:h-[260px] flex flex-col justify-end shadow-xl shadow-[#53C8AF]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(83,200,175,0.25)]"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4"
+                >
+                  <i
+                    class="fa-solid fa-chart-line text-white text-sm md:text-base"
+                  ></i>
+                </div>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90"
+                >
+                  Expanded our expertise in water, wastewater, environmental
+                  compliance and sustainable infrastructure development.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3: Expansion -->
+            <div class="flex flex-col items-center sm:mt-0 lg:mt-28">
+              <div class="flex items-center gap-2 mb-3 md:mb-4">
+                <span
+                  class="text-[10px] font-['Azeret_Mono'] text-[#86DBC8] font-bold"
+                  >03</span
+                >
+                <h3
+                  class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]"
+                >
+                  Expansion
+                </h3>
+              </div>
+              <div
+                class="w-full bg-gradient-to-b from-[#D8F6EE] to-[#EAF7F2] rounded-2xl md:rounded-3xl p-5 md:p-7 text-[#112A23] min-h-[160px] md:h-[180px] lg:h-[180px] flex flex-col justify-end shadow-xl shadow-[#86DBC8]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(134,219,200,0.2)]"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-[#26AF93]/10 flex items-center justify-center mb-3 md:mb-4"
+                >
+                  <i
+                    class="fa-solid fa-globe text-[#26AF93] text-sm md:text-base"
+                  ></i>
+                </div>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed md:leading-7 text-[#48675B]"
+                >
+                  Successfully executed environmental projects across diverse
+                  sectors.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Innovation -->
+            <div class="flex flex-col items-center sm:mt-0 lg:mt-14">
+              <div class="flex items-center gap-2 mb-3 md:mb-4">
+                <span
+                  class="text-[10px] font-['Azeret_Mono'] text-[#53C8AF] font-bold"
+                  >04</span
+                >
+                <h3
+                  class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]"
+                >
+                  Innovation
+                </h3>
+              </div>
+              <div
+                class="w-full bg-gradient-to-b from-[#53C8AF] to-[#86DBC8] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[200px] md:h-[240px] lg:h-[260px] flex flex-col justify-end shadow-xl shadow-[#53C8AF]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(83,200,175,0.25)]"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4"
+                >
+                  <i
+                    class="fa-solid fa-lightbulb text-white text-sm md:text-base"
+                  ></i>
+                </div>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90"
+                >
+                  Leveraging modern engineering practices and innovation to
+                  build efficient, future-ready environmental solutions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 5: Towards the Future -->
+            <div class="flex flex-col items-center sm:col-span-2 lg:col-span-1">
+              <div class="flex items-center gap-2 mb-3 md:mb-4">
+                <span
+                  class="text-[10px] font-['Azeret_Mono'] text-[#26AF93] font-bold"
+                  >05</span
+                >
+                <h3
+                  class="font-['Fraunces'] text-base md:text-lg font-semibold text-[#112A23]"
+                >
+                  Towards the Future
+                </h3>
+              </div>
+              <div
+                class="w-full bg-gradient-to-b from-[#26AF93] to-[#0F8F78] rounded-2xl md:rounded-3xl p-5 md:p-7 text-white min-h-[220px] md:h-[280px] lg:h-[320px] flex flex-col justify-end shadow-xl shadow-[#26AF93]/20 hover:-translate-y-2 md:hover:-translate-y-3 transition duration-500 hover:shadow-[0_20px_50px_rgba(38,175,147,0.25)]"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 md:mb-4"
+                >
+                  <i
+                    class="fa-solid fa-earth-asia text-white text-sm md:text-base"
+                  ></i>
+                </div>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed md:leading-7 opacity-90"
+                >
+                  Continuing our mission to create resilient communities through
+                  sustainable engineering, environmental stewardship and
+                  long-term innovation.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    
 
     <div id="footer"></div>
 
     <script src="../header/header.js"></script>
     <script src="../footer/footer.js"></script>
-</body>
-
+  </body>
 </html>
