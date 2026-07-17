@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIEC – Products Catalog</title>
+  <meta name="description" content="Industrial products for environmental and engineering solutions." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+
+  <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon.png"
+    />
+
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" href="./images/favicon.png" />
+
+    <!-- favicon sizes -->
+    <link rel="shortcut icon" href="./images/favicon.png" />
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Zain:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Zain:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+
+  <style>
+    /* ===== GLOBAL FONT SETTINGS ===== */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+    }
+
+    .font-display {
+      font-family: 'Fraunces', serif;
+    }
+    .font-body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ===== PRODUCT CARD STYLES ===== */
+    .product-card {
+      background: #33502f;
+      border-radius: 1.75rem;
+      border: 7px solid #1e331c;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.15);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.22);
+    }
+
+    /* --- Image panel --- */
+    .product-card .card-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #8aab6f 0%, #63855a 100%);
+      height: 220px;
+      border-radius: 1.15rem;
+      margin: 0;
+    }
+
+    .product-card .card-image {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .product-card .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 18px rgba(0,0,0,0.32));
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .product-card:hover .card-image img {
+      transform: scale(1.06);
+    }
+
+    .product-card .badge-category {
+      display: none; /* not present in reference */
+    }
+
+    .product-card .wishlist-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.85);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #94a3b8;
+      z-index: 3;
+      font-size: 0.75rem;
+    }
+
+    .product-card .wishlist-btn:hover {
+      background: white;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-card .wishlist-btn.liked {
+      color: #e53e3e;
+      background: rgba(229, 62, 62, 0.15);
+    }
+
+    /* bottom strip on image - "Free Delivery until 16/06/2026" style */
+    .product-card .image-strip {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 8px 14px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #fff;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .product-card .image-strip.in-stock {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .product-card .image-strip.out-stock {
+      background: rgba(179, 58, 52, 0.8);
+    }
+
+    /* --- Text content below image --- */
+    .product-card .card-body {
+      padding: 18px 18px 16px;
+      flex: 1;
+    }
+
+    .product-card .card-body .top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .product-card .card-body .name-col {
+      flex: 1;
+      min-width: 0;
+      padding-top: 2px;
+    }
+
+    .product-card .card-body .product-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .product-card .card-body .product-desc,
+    .product-card .stock-badge {
+      display: none; /* not present in reference */
+    }
+
+    .product-card .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .product-card .tag-pill {
+      background: rgba(255,255,255,0.14);
+      color: #dbe9d3;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+
+    .product-card .price-col {
+      flex-shrink: 0;
+      text-align: right;
+      padding-left: 14px;
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .product-card .product-price {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      white-space: nowrap;
+      margin-bottom: 8px;
+    }
+
+    .product-card .card-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      border-top: none;
+    }
+
+    .product-card .card-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+      border-radius: 0;
+    }
+
+    .product-card .card-actions button:hover {
+      opacity: 0.75;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-add-cart {
+      color: #9bd67f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .btn-add-cart.added,
+    .btn-add-cart.go-to-cart {
+      color: #e8cb7d;
+    }
+
+    .btn-buy-now {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ===== FILTER CHIPS ===== */
+    .filter-chip {
+      background: white;
+      border: 1px solid rgba(108, 179, 63, 0.25);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      color: #475569;
+    }
+
+    .filter-chip:hover {
+      border-color: #6CB33F;
+      color: #0b1a2f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(108, 179, 63, 0.15);
+    }
+
+    .filter-chip.active {
+      background: #6CB33F;
+      color: white;
+      border-color: #6CB33F;
+      box-shadow: 0 4px 12px rgba(108, 179, 63, 0.25);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero-gradient {
+      background: linear-gradient(145deg, #0b1a2f 0%, #1a314a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-gradient::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(108, 179, 63, 0.05) 40px, rgba(108, 179, 63, 0.05) 41px);
+      pointer-events: none;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      background: rgba(11, 26, 47, 0.8);
+      backdrop-filter: blur(8px);
+    }
+
+    /* ===== RATING STARS ===== */
+    .rating-star {
+      color: #f5b342;
+      letter-spacing: 1px;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .animate-float-slow {
+      animation: float-slow 6s ease-in-out infinite;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6CB33F;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4E9A2D;
+    }
+
+    /* ===== EMPTY STATE ===== */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .empty-state h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: #0b1a2f;
+      margin-bottom: 8px;
+    }
+
+    .empty-state p {
+      color: #94a3b8;
+    }
+
+    /* ===== CURRENCY SYMBOL ===== */
+    .currency-symbol {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== INCLUDE HEADER ===== -->
+  <div id="header"></div>
+
+  <main>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-gradient py-20 px-6 text-center relative">
+  <div class="max-w-5xl mx-auto relative z-10">
+    <span class="inline-flex items-center gap-2 text-[#9bc76d] font-body text-[10px] uppercase tracking-[0.2em] font-medium mb-4" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 600;">
+      <span class="w-6 h-px bg-[#9bc76d]/50"></span>
+      Industrial Product Catalog
+      <span class="relative flex h-1.5 w-1.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#22c55e]"></span>
+      </span>
+      <span class="w-6 h-px bg-[#9bc76d]/50"></span>
+    </span>
+
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]" style="font-family: 'Playfair Display', serif; font-weight: 800;">
+      Premium <span class="bg-gradient-to-r from-[#4ade80] via-[#22c55e] to-[#4ade80] bg-clip-text text-transparent">Industrial</span> Products
+    </h1>
+    
+    <p class="font-body text-white/60 text-base md:text-lg max-w-2xl mx-auto mt-4 leading-relaxed" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400;">
+      Precision engineering · Sustainable materials · Certified quality for environmental and industrial applications
+    </p>
+
+    <!-- Search Bar -->
+    <div class="mt-8 max-w-2xl mx-auto">
+      <div class="relative flex items-center bg-white/10 backdrop-blur-sm rounded-full border border-white/10 overflow-hidden transition-all focus-within:border-white/30 focus-within:bg-white/15">
+        <i class="fas fa-search absolute left-5 text-white/40 text-sm"></i>
+        <input 
+          type="text" 
+          id="globalSearch" 
+          placeholder="Search products, categories, or brands..." 
+          class="w-full py-3.5 pl-12 pr-4 bg-transparent text-white placeholder-white/40 focus:outline-none" 
+          style="font-family: 'Inter', system-ui, sans-serif;"
+        />
+        <button id="searchBtn" class="bg-[#22c55e] text-white px-6 py-2.5 mr-1.5 rounded-full font-semibold hover:bg-[#16a34a] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(34,197,94,0.3)]" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 600;">
+          <i class="fas fa-arrow-right mr-2"></i>Search
+        </button>
+      </div>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="flex flex-wrap justify-center gap-6 mt-8 text-white/50 text-xs font-medium">
+      <span class="flex items-center gap-2" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500;">
+        <i class="fas fa-check-circle text-[#22c55e]"></i>
+        ISO 14001 Certified
+      </span>
+      <span class="flex items-center gap-2" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500;">
+        <i class="fas fa-truck text-[#22c55e]"></i>
+        Global Shipping
+      </span>
+      <span class="flex items-center gap-2" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500;">
+        <i class="fas fa-shield-alt text-[#22c55e]"></i>
+        Industrial Grade
+      </span>
+      <span class="flex items-center gap-2" style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500;">
+        <i class="fas fa-headset text-[#22c55e]"></i>
+        24/7 Support
+      </span>
+    </div>
+  </div>
+
+  <!-- Decorative Elements -->
+  <div class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-[#22c55e]/5 blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 left-1/4 w-48 h-48 rounded-full bg-[#4ade80]/5 blur-3xl pointer-events-none"></div>
+</section>
+
+<style>
+  /* Hero Gradient Background */
+  .hero-gradient {
+    position: relative;
+    background: linear-gradient(135deg, #0f1f18 0%, #1a3329 40%, #0d1f16 100%);
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Font classes explicitly defined for this section */
+  .hero-gradient .font-display {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 800 !important;
+  }
+
+  .hero-gradient .font-body {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-weight: 400 !important;
+  }
+
+  .hero-gradient .font-mono {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  /* Search input placeholder styling */
+  .hero-gradient input::placeholder {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Trust indicators hover effect */
+  .hero-gradient .flex-wrap span {
+    transition: all 0.3s ease;
+  }
+
+  .hero-gradient .flex-wrap span:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero-gradient .flex-wrap span i {
+    transition: transform 0.3s ease;
+  }
+
+  .hero-gradient .flex-wrap span:hover i {
+    transform: scale(1.2);
+  }
+</style>
+
+    <!-- ===== CATEGORY FILTERS ===== -->
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-4">
+      <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start" id="categoryFilterContainer">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+    <!-- ===== TOOLBAR ===== -->
+    <div class="max-w-7xl mx-auto px-6 pb-4">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <span class="text-sm text-gray-500 font-medium">
+            <i class="far fa-list-alt mr-1"></i> 
+            <span id="productCount">0</span> products
+          </span>
+          <select id="sortSelect" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white focus:outline-none focus:border-[#6CB33F] focus:ring-1 focus:ring-[#6CB33F]">
+            <option value="default">Sort by</option>
+            <option value="priceLow">Price: Low → High</option>
+            <option value="priceHigh">Price: High → Low</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-4">
+          <button id="clearFiltersBtn" class="text-sm text-gray-500 hover:text-[#0b1a2f] transition-all duration-300 flex items-center gap-1.5">
+            <i class="fas fa-undo-alt"></i> Reset
+          </button>
+          <div class="flex items-center gap-3 text-sm bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-100">
+            <!-- Wishlist Link -->
+            <a href="/pages/wishlist/wishlist.html" class="text-gray-400 hover:text-red-500 transition-colors relative" aria-label="View wishlist">
+              <i class="fas fa-heart text-base"></i>
+              <span id="wishlistCount" class="absolute -top-1 -right-2 bg-red-500 text-white text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+            </a>
+            <span class="w-px h-4 bg-gray-200"></span>
+            <!-- Cart Link -->
+            <a href="/pages/cart/cart.html" class="text-gray-400 hover:text-[#6CB33F] transition-colors relative" aria-label="View cart">
+              <i class="fas fa-shopping-cart text-base"></i>
+              <span id="cartCount" class="absolute -top-1 -right-2 bg-[#6CB33F] text-white text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PRODUCT GRID ===== -->
+    <div class="max-w-7xl mx-auto px-6 pb-20">
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Dynamically generated -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state hidden">
+        <i class="fas fa-box-open"></i>
+        <h3>No products found</h3>
+        <p>Try adjusting your filters or search terms</p>
+        <button id="resetFromEmpty" class="mt-4 text-[#6CB33F] font-medium hover:underline">
+          <i class="fas fa-undo-alt mr-1"></i> Clear all filters
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== CTA SECTION ===== -->
+    <!-- <section class="max-w-7xl mx-auto px-6 pb-16">
+      <div class="relative rounded-3xl overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1974&auto=format&fit=crop" 
+          alt="Sustainable engineering" 
+          class="w-full h-64 md:h-80 object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0d2b20]/90 via-[#0d2b20]/70 to-[#0d2b20]/40"></div>
+        
+        <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+          <div>
+            <h3 class="font-display text-2xl md:text-3xl text-white font-bold mb-2">
+              Need a <span class="text-[#22c55e]">custom solution</span>?
+            </h3>
+            <p class="text-white/60 text-sm max-w-lg mx-auto">
+              Contact our engineering team for bulk orders, custom fabrication, and tailored industrial solutions.
+            </p>
+            <button class="mt-4 bg-[#22c55e] text-white px-8 py-2.5 rounded-full font-semibold hover:bg-[#16a34a] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(34,197,94,0.3)] hover:-translate-y-0.5">
+              <i class="fas fa-headset mr-2"></i> Talk to an Expert
+            </button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <!-- ===== INCLUDE FOOTER ===== -->
+  <div id="footer"></div>
+
+  <!-- ===== PRODUCT MODAL ===== -->
+  <div id="productModal" class="fixed inset-0 z-50 flex items-center justify-center px-4 modal-overlay hidden">
+    <div class="bg-white max-w-4xl w-full rounded-3xl shadow-2xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button id="closeModalBtn" class="absolute top-4 right-5 text-gray-400 hover:text-gray-700 text-3xl transition-colors">&times;</button>
+      <div id="modalContent" class="grid md:grid-cols-2 gap-8">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="/js/products.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/cart.js"></script>
+  <script src="../../js/wishlist.js"></script>
+  <script src="../../js/filters.js"></script>
+  <script src="../../js/productModal.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="/header/header.js"></script>
+  <script src="/footer/footer.js"></script>
+
+ 
+
+  <script>
+    // ===== OVERRIDE UTILS FORMAT PRICE WITH INR =====
+    // Override the formatPrice function to use ₹
+    if (typeof Utils !== 'undefined') {
+      Utils.formatPrice = function(num) {
+        return '₹' + num.toFixed(2);
+      };
+    }
+
+// ===== OVERRIDE RENDER PRODUCTS WITH ENHANCED UI (matches reference card design) =====
+function renderProducts(products) {
+    const grid = document.getElementById('productGrid');
+    const emptyState = document.getElementById('emptyState');
+
+    if (!grid) return;
+
+    if (!products || products.length === 0) {
+        grid.innerHTML = '';
+        if (emptyState) emptyState.classList.remove('hidden');
+        document.getElementById('productCount').textContent = '0';
+        return;
+    }
+
+    if (emptyState) emptyState.classList.add('hidden');
+    document.getElementById('productCount').textContent = products.length;
+
+    grid.innerHTML = products.map(p => {
+
+        // ===== WhatsApp inquiry card =====
+        if (p.isWhatsApp) {
+            return `
+            <div class="product-card" data-id="${p.id}">
+                <div class="card-image-wrap">
+                    <div class="card-image">
+                        <img src="${p.img}" alt="${p.name}" loading="lazy" />
+                    </div>
+                    <div class="image-strip in-stock">Always Available</div>
+                </div>
+                <div class="card-body">
+                    <div class="top-row">
+                        <div class="name-col">
+                            <h3 class="product-name">${p.name}</h3>
+                            <div class="tag-row"><span class="tag-pill">★ ${p.rating}</span></div>
+                        </div>
+                        <div class="price-col">
+                            <div class="card-actions">
+                                <button onclick="window.open('https://wa.me/91${p.whatsappNumber}?text=${encodeURIComponent(p.whatsappMessage)}', '_blank')" style="color:#9bd67f; text-decoration:underline; text-underline-offset:3px; background:none; border:none; cursor:pointer; font-size:0.78rem; font-weight:600;">
+                                    Enquire ↗
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        // ===== Regular product cards =====
+        const inWish = wishlist.some(w => w.id === p.id);
+        const inCart = cart.some(c => c.id === p.id);
+        const stockClass = p.stock > 0 ? 'in-stock' : 'out-stock';
+        const stockText = p.stock > 0 ? 'Free Delivery Available' : 'Currently Out of Stock';
+
+        // Use the formatPrice with INR
+        const price = Utils.formatPrice ? Utils.formatPrice(p.price) : '₹' + p.price.toFixed(2);
+
+        // Generate image with fallback
+        const productImage = p.img || 'https://placehold.co/400x300/1e293b/c9a84c?text=' + encodeURIComponent(p.name);
+
+        return `
+        <div class="product-card" data-id="${p.id}">
+            <div class="card-image-wrap">
+                <div class="card-image">
+                    <img src="${productImage}" alt="${p.name}" loading="lazy" />
+                </div>
+                <button class="wishlist-btn ${inWish ? 'liked' : ''}" data-id="${p.id}">
+                    <i class="fas fa-heart"></i>
+                </button>
+                <div class="image-strip ${stockClass}">${stockText}</div>
+            </div>
+            <div class="card-body">
+                <div class="top-row">
+                    <div class="name-col">
+                        <h3 class="product-name">${p.name}</h3>
+                        <div class="tag-row">
+                            <span class="tag-pill">${p.category}</span>
+                            <span class="tag-pill">★ ${p.rating}</span>
+                        </div>
+                    </div>
+                    <div class="price-col">
+                        <span class="product-price">${price}</span>
+                        <div class="card-actions">
+                            <button class="add-cart-btn btn-add-cart ${inCart ? 'added go-to-cart' : ''}" data-id="${p.id}">
+                                ${inCart ? 'Go to Cart ↗' : 'Add to Cart ↗'}
+                            </button>
+                            <button class="buy-now-btn btn-buy-now" data-id="${p.id}">
+                                Buy Now ↗
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+
+    // Attach event listeners for regular products only
+    attachProductEvents();
+
+    // GSAP animation
+    gsap.from('.product-card', {
+        opacity: 0,
+        y: 30,
+        stagger: 0.05,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+    });
+}
+
+    // ===== ATTACH EVENTS =====
+    function attachProductEvents() {
+      // Wishlist
+      document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.removeEventListener('click', handleWishlistClick);
+        btn.addEventListener('click', handleWishlistClick);
+      });
+      
+      // Add to cart
+      document.querySelectorAll('.add-cart-btn').forEach(btn => {
+        btn.removeEventListener('click', handleAddToCart);
+        btn.addEventListener('click', handleAddToCart);
+      });
+      
+      // Buy now
+      document.querySelectorAll('.buy-now-btn').forEach(btn => {
+        btn.removeEventListener('click', handleBuyNow);
+        btn.addEventListener('click', handleBuyNow);
+      });
+    }
+
+    // ===== EVENT HANDLERS =====
+    function handleWishlistClick(e) {
+      const id = parseInt(e.currentTarget.dataset.id);
+      const added = toggleWishlist(id);
+      e.currentTarget.classList.toggle('liked', added);
+    }
+
+    function handleAddToCart(e) {
+      const id = parseInt(e.currentTarget.dataset.id);
+      const success = addToCart(id);
+      if (success) {
+        // Change button to "Go to Cart"
+        e.currentTarget.innerHTML = 'Go to Cart ↗';
+        e.currentTarget.classList.add('added', 'go-to-cart');
+        
+        // Redirect to cart page on click when it's "Go to Cart" state
+        e.currentTarget.onclick = function() {
+          window.location.href = '/pages/cart/cart.html';
+        };
+        
+        // Update cart count
+        if (typeof updateCartCounters === 'function') {
+          updateCartCounters();
+        }
+      }
+    }
+
+    function handleBuyNow(e) {
+      const id = parseInt(e.currentTarget.dataset.id);
+      const product = Products.find(p => p.id === id);
+      if (product) {
+        addToCart(id);
+        // Redirect to cart page
+        window.location.href = '/pages/cart/cart.html';
+      }
+    }
+
+    // ===== OVERRIDE CART UPDATE TO REFRESH BUTTON STATES =====
+    // Store the original updateCartCounters if it exists
+    if (typeof updateCartCounters === 'function') {
+      const originalUpdateCartCounters = updateCartCounters;
+      updateCartCounters = function() {
+        originalUpdateCartCounters();
+        // Update all product card button states
+        document.querySelectorAll('.product-card').forEach(card => {
+          const id = parseInt(card.dataset.id);
+          const inCart = cart.some(c => c.id === id);
+          const btn = card.querySelector('.add-cart-btn');
+          if (btn) {
+            if (inCart) {
+              btn.innerHTML = 'Go to Cart ↗';
+              btn.classList.add('added', 'go-to-cart');
+              btn.onclick = function() {
+                window.location.href = '/pages/cart/cart.html';
+              };
+            } else {
+              btn.innerHTML = 'Add to Cart ↗';
+              btn.classList.remove('added', 'go-to-cart');
+              btn.onclick = null;
+              // Re-attach add to cart handler
+              btn.removeEventListener('click', handleAddToCart);
+              btn.addEventListener('click', handleAddToCart);
+            }
+          }
+        });
+      };
+    }
+
+    // ===== INITIALIZATION =====
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize modules
+      initCart();
+      initWishlist();
+      initFilters();
+      initProductModal();
+      
+      // Initial render
+      renderProducts(Products);
+      
+      // Override the global renderProducts with our enhanced version
+      window.renderProducts = renderProducts;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIEC – Wishlist</title>
+  <meta name="description" content="View and manage your wishlist." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <!-- Google Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-display {
+      font-family: 'Fraunces', serif;
+    }
+    .font-body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    
+    body {
+      background: #f8fafc;
+    }
+    
+    .wishlist-item-card {
+      background: white;
+      border-radius: 1rem;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 1px solid #f1f5f9;
+      overflow: hidden;
+    }
+    
+    .wishlist-item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border-color: rgba(229, 62, 62, 0.2);
+    }
+    
+    .wishlist-item-card .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .wishlist-item-card:hover .product-image {
+      transform: scale(1.05);
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(145deg, #0b1a2f 0%, #1a314a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-gradient::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(229, 62, 62, 0.05) 40px, rgba(229, 62, 62, 0.05) 41px);
+      pointer-events: none;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .empty-state i {
+      font-size: 4rem;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+    
+    .empty-state h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: #0b1a2f;
+      margin-bottom: 8px;
+    }
+    
+    .empty-state p {
+      color: #94a3b8;
+    }
+    
+    .btn-add-cart {
+      background: #22c55e;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-add-cart:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    }
+    
+    .btn-remove-wishlist {
+      background: #fee9e7;
+      color: #b33a34;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-remove-wishlist:hover {
+      background: #fdd5d0;
+      transform: translateY(-2px);
+    }
+
+    .stock-badge.in-stock {
+      background: #e6f7e6;
+      color: #1e7b3a;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .stock-badge.out-stock {
+      background: #fee9e7;
+      color: #b33a34;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .rating-star {
+      color: #f5b342;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <div id="header"></div>
+
+  <main>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-gradient py-16 px-6 text-center relative">
+      <div class="max-w-4xl mx-auto relative z-10">
+        <span class="inline-flex items-center gap-2 text-[#ff6b6b] font-body text-[10px] uppercase tracking-[0.2em] font-medium mb-4">
+          <span class="w-6 h-px bg-[#ff6b6b]/50"></span>
+          Your Wishlist
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e53e3e] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#e53e3e]"></span>
+          </span>
+          <span class="w-6 h-px bg-[#ff6b6b]/50"></span>
+        </span>
+        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1]">
+          Your <span class="text-red-400">Wishlist</span>
+        </h1>
+        <p class="font-body text-white/60 text-base max-w-2xl mx-auto mt-3 leading-relaxed">
+          Save your favorite products and come back to them anytime
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== WISHLIST CONTENT ===== -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-display text-xl font-bold text-[#0b1a2f]">
+          <span id="wishlistItemCount">0</span> Items
+        </h2>
+        <button id="clearWishlistBtn" class="text-sm text-red-500 hover:text-red-600 transition-colors flex items-center gap-1.5">
+          <i class="fas fa-trash-alt"></i> Clear Wishlist
+        </button>
+      </div>
+      
+      <!-- Wishlist Grid -->
+      <div id="wishlistGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Items will be injected here -->
+      </div>
+      
+      <!-- Empty State -->
+      <div id="emptyWishlistMessage" class="empty-state">
+        <i class="fas fa-heart"></i>
+        <h3>Your wishlist is empty</h3>
+        <p>Start saving your favorite products</p>
+        <a href="/pages/products/products.html" class="inline-block mt-4 bg-[#22c55e] text-white px-6 py-2.5 rounded-full hover:bg-[#16a34a] transition-all duration-300 hover:shadow-lg">
+          <i class="fas fa-arrow-left mr-2"></i> Browse Products
+        </a>
+      </div>
+      
+      <!-- Continue Shopping Link -->
+      <div class="mt-8">
+        <a href="/pages/products/products.html" class="text-[#22c55e] hover:text-[#16a34a] transition-colors flex items-center gap-2">
+          <i class="fas fa-arrow-left"></i> Continue Shopping
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="footer"></div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <!-- Load products first -->
+  <script src="../../js/products.js"></script>
+  <script src="../../js/utils.js"></script>
+  
+  <!-- Then cart and wishlist -->
+  <script src="../../js/cart.js"></script>
+  <script src="../../js/wishlist.js"></script>
+  
+  <!-- Then main -->
+  <script src="../../js/main.js"></script>
+
+  <!-- Header & Footer Loader -->
+  <script>
+    (function loadHeaderFooter() {
+      // ===== LOAD HEADER =====
+      const headerContainer = document.getElementById('header');
+      if (headerContainer) {
+        fetch('../../header/header.html')
+          .then(response => {
+            if (!response.ok) throw new Error('Header not found');
+            return response.text();
+          })
+          .then(html => {
+            headerContainer.innerHTML = html;
+            if (typeof initHeader === 'function') {
+              initHeader();
+            }
+          })
+          .catch(() => {
+            headerContainer.innerHTML = `
+              <header class="bg-[#0b1a2f] text-white py-4 px-6">
+                <div class="max-w-7xl mx-auto flex items-center justify-between">
+                  <a href="/" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#22c55e] rounded-lg flex items-center justify-center font-bold text-lg">SIEC</div>
+                    <span class="font-display text-xl font-semibold">SIEC</span>
+                  </a>
+                  <nav class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-white/70 hover:text-white transition">Home</a>
+                    <a href="/pages/about/about.html" class="text-white/70 hover:text-white transition">About</a>
+                    <a href="/pages/services/services.html" class="text-white/70 hover:text-white transition">Services</a>
+                    <a href="/pages/products/products.html" class="text-[#22c55e] font-semibold">Products</a>
+                    <a href="/pages/careers/careers.html" class="text-white/70 hover:text-white transition">Careers</a>
+                    <a href="/pages/contact/contact.html" class="text-white/70 hover:text-white transition">Contact</a>
+                  </nav>
+                </div>
+              </header>
+            `;
+          });
+      }
+
+      // ===== LOAD FOOTER =====
+      const footerContainer = document.getElementById('footer');
+      if (footerContainer) {
+        fetch('../../footer/footer.html')
+          .then(response => {
+            if (!response.ok) throw new Error('Footer HTML not found');
+            return response.text();
+          })
+          .then(html => {
+            footerContainer.innerHTML = html;
+          })
+          .catch(() => {
+            const footerScript = document.createElement('script');
+            footerScript.src = '../../footer/footer.js';
+            footerScript.onerror = function() {
+              footerContainer.innerHTML = `
+                <footer class="bg-[#0b1a2f] text-white/60 py-12 px-6">
+                  <div class="max-w-7xl mx-auto text-center">
+                    <p>&copy; 2026 SIEC. All rights reserved.</p>
+                  </div>
+                </footer>
+              `;
+            };
+            document.body.appendChild(footerScript);
+          });
+      }
+    })();
+  </script>
+
+  <script>
+    // ===== OVERRIDE UTILS FORMAT PRICE WITH INR =====
+    if (typeof Utils !== 'undefined') {
+      Utils.formatPrice = function(num) {
+        return '₹' + num.toFixed(2);
+      };
+    }
+
+    // ===== WISHLIST PAGE SPECIFIC FUNCTIONS =====
+    function renderWishlistPageItems() {
+      const grid = document.getElementById('wishlistGrid');
+      const emptyMessage = document.getElementById('emptyWishlistMessage');
+      const itemCount = document.getElementById('wishlistItemCount');
+      
+      if (!grid) return;
+      
+      // Get wishlist from global scope
+      const wishlistItems = window.wishlist || [];
+      
+      console.log('Wishlist items:', wishlistItems); // Debug log
+      
+      // Clear grid
+      grid.innerHTML = '';
+      
+      if (wishlistItems.length === 0) {
+        emptyMessage.classList.remove('hidden');
+        if (itemCount) itemCount.textContent = '0';
+        return;
+      }
+      
+      emptyMessage.classList.add('hidden');
+      if (itemCount) itemCount.textContent = wishlistItems.length;
+      
+      // Render each wishlist item
+      wishlistItems.forEach((item, index) => {
+        const price = Utils.formatPrice ? Utils.formatPrice(item.price) : '₹' + item.price.toFixed(2);
+        const stars = Utils.stars ? Utils.stars(item.rating || 4.5) : '★★★★☆';
+        
+        const itemHTML = `
+          <div class="wishlist-item-card" data-index="${index}">
+            <div class="relative">
+              <img src="${item.img || 'https://placehold.co/400x300/1e293b/c9a84c?text=Product'}" alt="${item.name}" class="product-image">
+              <span class="absolute top-3 left-3 bg-[#0b1a2f]/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
+                ${item.category || 'Product'}
+              </span>
+            </div>
+            <div class="p-4">
+              <h4 class="font-semibold text-[#0b1a2f] text-lg">${item.name}</h4>
+              <div class="flex items-center gap-1 mt-1 text-sm text-gray-600">
+                <span class="rating-star">${stars}</span>
+                <span class="text-xs text-gray-400">${item.rating || 4.5}</span>
+              </div>
+              <p class="text-sm text-gray-500 mt-1 line-clamp-2">${item.desc || 'Premium industrial product'}</p>
+              <div class="flex items-center justify-between mt-3">
+                <span class="text-xl font-bold text-[#0b1a2f]">${price}</span>
+                <span class="stock-badge ${item.stock > 0 ? 'in-stock' : 'out-stock'}">
+                  ${item.stock > 0 ? 'In Stock' : 'Out of Stock'}
+                </span>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn-add-cart wishlist-add-cart-btn flex-1" data-index="${index}">
+                  <i class="fas fa-cart-plus mr-1"></i> Add to Cart
+                </button>
+                <button class="btn-remove-wishlist wishlist-remove-btn" data-index="${index}">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', itemHTML);
+      });
+      
+      // Attach event listeners
+      document.querySelectorAll('.wishlist-add-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          const wishlistItems = window.wishlist || [];
+          const item = wishlistItems[index];
+          if (item && typeof addToCart === 'function') {
+            addToCart(item.id, 1);
+            // Remove from wishlist after adding to cart
+            wishlistItems.splice(index, 1);
+            if (typeof saveWishlist === 'function') {
+              saveWishlist();
+            }
+            renderWishlistPageItems();
+            alert(`${item.name} added to cart!`);
+          }
+        });
+      });
+      
+      document.querySelectorAll('.wishlist-remove-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          const wishlistItems = window.wishlist || [];
+          wishlistItems.splice(index, 1);
+          if (typeof saveWishlist === 'function') {
+            saveWishlist();
+          }
+          renderWishlistPageItems();
+        });
+      });
+    }
+
+    // ===== INITIALIZATION =====
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Wishlist page loaded');
+      
+      // Initialize modules
+      if (typeof initWishlist === 'function') {
+        initWishlist();
+      }
+      
+      if (typeof initCart === 'function') {
+        initCart();
+      }
+      
+      // Render wishlist items
+      setTimeout(function() {
+        renderWishlistPageItems();
+      }, 100);
+      
+      // Clear wishlist button
+      document.getElementById('clearWishlistBtn')?.addEventListener('click', function() {
+        if (confirm('Are you sure you want to clear your wishlist?')) {
+          if (typeof clearWishlist === 'function') {
+            clearWishlist();
+          } else {
+            window.wishlist = [];
+            if (typeof saveWishlist === 'function') {
+              saveWishlist();
+            }
+          }
+          renderWishlistPageItems();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
