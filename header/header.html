@@ -16,6 +16,13 @@
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* New mobile dropdown styles */
+  #mobile-solutions-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   /* Nice scrollbar for Webkit */
   #mobile-menu::-webkit-scrollbar {
     width: 6px;
@@ -24,6 +31,152 @@
   #mobile-menu::-webkit-scrollbar-thumb {
     background: #26AF93;
     border-radius: 20px;
+  }
+
+  /* Mobile Responsive Styles - Keep everything else exactly the same */
+  @media (max-width: 768px) {
+    header {
+      border-radius: 0 0 1.5rem 1.5rem !important;
+    }
+    #mobile-menu {
+      border-radius: 0 0 1.5rem 1.5rem;
+    }
+    .ml-6 {
+      margin-left: 0.5rem !important;
+    }
+    .h-11 {
+      height: 2.5rem !important;
+    }
+    .sm\:h-12 {
+      height: 2.5rem !important;
+    }
+    .scale-125 {
+      scale: 1.1 !important;
+    }
+    .px-5 {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+    .py-5 {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+    .text-base {
+      font-size: 0.95rem !important;
+    }
+    .px-5 {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+    .py-3 {
+      padding-top: 0.7rem !important;
+      padding-bottom: 0.7rem !important;
+    }
+    .mt-6 {
+      margin-top: 1rem !important;
+    }
+    .mx-5 {
+      margin-left: 0.5rem !important;
+      margin-right: 0.5rem !important;
+    }
+    .py-3\.5 {
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
+    }
+    .pl-6 {
+      padding-left: 1rem !important;
+    }
+    .mt-3 {
+      margin-top: 0.5rem !important;
+    }
+    .space-y-2 > * + * {
+      margin-top: 0.25rem !important;
+    }
+    .py-2\.5 {
+      padding-top: 0.4rem !important;
+      padding-bottom: 0.4rem !important;
+    }
+    .px-4 {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+    .text-3xl {
+      font-size: 1.75rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      border-radius: 0 0 1rem 1rem !important;
+    }
+    #mobile-menu {
+      border-radius: 0 0 1rem 1rem;
+    }
+    .ml-6 {
+      margin-left: 0.25rem !important;
+    }
+    .h-11 {
+      height: 2rem !important;
+    }
+    .sm\:h-12 {
+      height: 2rem !important;
+    }
+    .scale-125 {
+      scale: 1 !important;
+    }
+    .px-5 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    .py-5 {
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
+    }
+    .text-base {
+      font-size: 0.85rem !important;
+    }
+    .px-5 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    .py-3 {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+    .mt-6 {
+      margin-top: 0.75rem !important;
+    }
+    .mx-5 {
+      margin-left: 0.25rem !important;
+      margin-right: 0.25rem !important;
+    }
+    .py-3\.5 {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+    .pl-6 {
+      padding-left: 0.75rem !important;
+    }
+    .mt-3 {
+      margin-top: 0.25rem !important;
+    }
+    .py-2\.5 {
+      padding-top: 0.3rem !important;
+      padding-bottom: 0.3rem !important;
+    }
+    .px-4 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    .text-3xl {
+      font-size: 1.5rem !important;
+    }
+    .rounded-3xl {
+      border-radius: 1.5rem !important;
+    }
+    .rounded-2xl {
+      border-radius: 1rem !important;
+    }
   }
 </style>
 
@@ -56,7 +209,35 @@
         </a>
       </li>
 
-      <!-- Services -->
+      <!-- Solutions Desktop Dropdown -->
+      <li class="relative group">
+        <button
+          class="flex items-center gap-1 font-quicksand px-2 py-2 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out">
+          Solutions
+          <span
+            class="material-icons text-base transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+        </button>
+        <ul
+          class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-64 bg-white/95 backdrop-blur-xl border border-[#DCEBE4] rounded-3xl py-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Solutions
+              Overview</a></li>
+          <li><a href="/pages/solutions/water_treatment.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Water
+              Treatment</a></li>
+          <li><a href="/pages/solutions/wastewater_treatment.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Wastewater
+              Treatment</a></li>
+          <li><a href="/pages/solutions/water_reuse.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Water
+              Reuse & Sustainability</a></li>
+          <li><a href="/pages/solutions/digital_smart-water.html"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Digital
+              & Smart Water</a></li>
+        </ul>
+      </li>
+
+      <!-- Services Desktop Dropdown -->
       <li class="relative group">
         <button
           class="flex items-center gap-1 font-quicksand px-2 py-2 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out">
@@ -64,31 +245,32 @@
           <span
             class="material-icons text-base transition-transform duration-300 group-hover:rotate-180">expand_more</span>
         </button>
-
         <ul
-          class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-60 bg-white/95 backdrop-blur-xl border border-[#DCEBE4] rounded-3xl py-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
-          <li><a href="../webdev/webdev.html"
-              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Environmental
-              Services</a></li>
-          <li><a href="../digitalmarketing/marketing.html"
-              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Smart
-              Water Management</a></li>
-          <li><a href="../software/software.html"
-              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Infrastructure
-              Design</a></li>
-          <li><a href="../graphic.html"
-              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Project
-              Management</a></li>
-          <li><a href="../comingsoon.html"
-              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Digital
-              Sustainability</a></li>
+          class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-64 bg-white/95 backdrop-blur-xl border border-[#DCEBE4] rounded-3xl py-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">EPC
+              Solutions</a></li>
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Engineering
+              Consultancy</a></li>
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Design
+              & Build</a></li>
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Commissioning</a></li>
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">Operations
+              & Maintenance</a></li>
+          <li><a href="#"
+              class="block px-4 py-2 text-[#2A463D] font-normal hover:bg-[#DDF3E7] hover:text-[#26AF93] rounded-2xl mx-2 transition-colors">AMC
+              & After Sales Support</a></li>
         </ul>
       </li>
 
       <li>
         <a href="/pages/products/products.html"
           class="font-quicksand relative px-4 py-2.5 rounded-3xl hover:bg-[#BDE6CF] transition-all duration-300 ease-in-out group">
-         Products
+          Products
           <span
             class="absolute left-1/2 -translate-x-1/2 -bottom-1 h-0.5 w-0 bg-[#26AF93] group-hover:w-5 transition-all duration-300"></span>
         </a>
@@ -123,7 +305,8 @@
 
       <!-- Social Icons - Enhanced Hover with Glass Mirror Effect -->
       <div class="flex items-center gap-2">
-        <a href="https://www.instagram.com/kunash_media_solutions?igsh=MTd4Nm42b2JnMHRyYw==" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+        <a href="https://www.instagram.com/kunash_media_solutions?igsh=MTd4Nm42b2JnMHRyYw==" target="_blank"
+          class="group relative overflow-hidden flex items-center justify-center
           w-10 h-10 rounded-full border border-[#DCEBE4]
           bg-white/70 backdrop-blur-md
           transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
@@ -144,7 +327,8 @@
               group-hover:scale-110"></i>
         </a>
 
-        <a href="https://www.linkedin.com/company/kunash-media/" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+        <a href="https://www.linkedin.com/company/kunash-media/" target="_blank"
+          class="group relative overflow-hidden flex items-center justify-center
           w-9 h-9 rounded-full border border-[#DCEBE4]
           bg-white/70 backdrop-blur-md
           transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
@@ -164,7 +348,8 @@
               group-hover:scale-110"></i>
         </a>
 
-        <a href="https://www.facebook.com/share/17ZM1TKmQt/" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+        <a href="https://www.facebook.com/share/17ZM1TKmQt/" target="_blank"
+          class="group relative overflow-hidden flex items-center justify-center
           w-9 h-9 rounded-full border border-[#DCEBE4]
           bg-white/70 backdrop-blur-md
           transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
@@ -185,7 +370,8 @@
         </a>
 
 
-        <a href="https://wa.me/918080473916" target="_blank" class="group relative overflow-hidden flex items-center justify-center
+        <a href="https://wa.me/918080473916" target="_blank"
+          class="group relative overflow-hidden flex items-center justify-center
           w-9 h-9 rounded-full border border-[#DCEBE4]
           bg-white/70 backdrop-blur-md
           transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
@@ -214,7 +400,6 @@
     </button>
   </nav>
 
-  <!-- Mobile Menu - Fixed Scroll Issue -->
   <!-- Mobile Menu -->
   <div id="mobile-menu"
     class="md:hidden max-h-[85vh] overflow-y-auto transition-all duration-500 ease-out bg-white/95 backdrop-blur-2xl border-t border-[#DCEBE4] rounded-b-3xl">
@@ -222,6 +407,23 @@
       <a href="../index.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">Home</a>
       <a href="../about/about.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">About</a>
 
+      <!-- Solutions Mobile Accordion -->
+      <div class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">
+        <button id="mobile-solutions-btn" class="w-full flex justify-between items-center">
+          Solutions
+          <span id="mobile-solutions-icon" class="material-icons transition-transform duration-300">add</span>
+        </button>
+        <div id="mobile-solutions-menu"
+          class="pl-6 mt-3 space-y-2 max-h-0 overflow-hidden transition-all duration-400 ease-in-out">
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Solutions Overview</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Water Treatment</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Wastewater Treatment</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Water Reuse & Sustainability</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Digital & Smart Water</a>
+        </div>
+      </div>
+
+      <!-- Services Mobile Accordion -->
       <div class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">
         <button id="mobile-services-btn" class="w-full flex justify-between items-center">
           Services
@@ -229,18 +431,15 @@
         </button>
         <div id="mobile-services-menu"
           class="pl-6 mt-3 space-y-2 max-h-0 overflow-hidden transition-all duration-400 ease-in-out">
-          <a href="../webdev/webdev.html"
-            class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Environmental Services</a>
-          <a href="../digitalmarketing/marketing.html"
-            class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Smart Water Management</a>
-          <a href="../software/software.html"
-            class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Infrastructure Design</a>
-          <a href="../graphic.html" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Project
-            Management</a>
-          <a href="../comingsoon.html" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Digital
-            Sustainability</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">EPC Solutions</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Engineering Consultancy</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Design & Build</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Commissioning</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">Operations & Maintenance</a>
+          <a href="#" class="block py-2.5 px-4 rounded-2xl hover:bg-white hover:text-[#26AF93]">AMC & After Sales Support</a>
         </div>
       </div>
+
       <a href="../career.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">Careers</a>
       <a href="../contact.html" class="px-5 py-3 rounded-3xl hover:bg-[#F2F9F6]">Contact</a>
 
@@ -251,3 +450,48 @@
     </div>
   </div>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.style.maxHeight = menuOpen ? '85vh' : '0';
+    // Close all dropdowns when menu closes
+    if (!menuOpen) {
+      document.getElementById('mobile-services-menu').style.maxHeight = '0';
+      document.getElementById('mobile-solutions-menu').style.maxHeight = '0';
+      document.getElementById('mobile-services-icon').textContent = 'add';
+      document.getElementById('mobile-solutions-icon').textContent = 'add';
+    }
+  });
+
+  // Mobile Services Accordion
+  const servicesBtn = document.getElementById('mobile-services-btn');
+  const servicesMenu = document.getElementById('mobile-services-menu');
+  const servicesIcon = document.getElementById('mobile-services-icon');
+
+  servicesBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const isOpen = servicesMenu.style.maxHeight && servicesMenu.style.maxHeight !== '0px';
+    servicesMenu.style.maxHeight = isOpen ? '0' : servicesMenu.scrollHeight + 'px';
+    servicesIcon.textContent = isOpen ? 'add' : 'remove';
+  });
+
+  // Mobile Solutions Accordion - FIXED
+  const solutionsBtn = document.getElementById('mobile-solutions-btn');
+  const solutionsMenu = document.getElementById('mobile-solutions-menu');
+  const solutionsIcon = document.getElementById('mobile-solutions-icon');
+
+  solutionsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const isOpen = solutionsMenu.style.maxHeight && solutionsMenu.style.maxHeight !== '0px';
+    solutionsMenu.style.maxHeight = isOpen ? '0' : solutionsMenu.scrollHeight + 'px';
+    solutionsIcon.textContent = isOpen ? 'add' : 'remove';
+  });
+</script>

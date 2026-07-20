@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Reuse &amp; Sustainability | SIEC Water</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=General+Sans:ital,wght@0,300..700;1,300..700&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --mint: #b2e4d6;
+            --teal: #1a6b5e;
+            --sage: #8ba39c;
+            --warm-beige: #f7f3ed;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'General Sans', sans-serif;
+            --font-mono: 'Azeret Mono', monospace;
+        }
+        body {
+            font-family: var(--font-body);
+            background: #faf9f7;
+            color: #1f2a24;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-display);
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background: #135a4e;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -10px rgba(26, 107, 94, 0.3);
+        }
+        .section-padding {
+            padding: 5rem 0;
+        }
+        .gradient-overlay {
+            background: linear-gradient(135deg, #1a6b5e 0%, #0f4037 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+        .text-teal {
+            color: var(--teal);
+        }
+        .bg-mint-light {
+            background: #eaf5f1;
+        }
+        .bg-warm {
+            background: var(--warm-beige);
+        }
+        .feature-icon {
+            background: #eaf5f1;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        @media (max-width: 640px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="py-4 border-b border-[#e4e0da] bg-white/90 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container flex items-center justify-between">
+            <div class="text-2xl font-display font-bold text-teal">SIEC<span class="text-[#8ba39c]">Water</span></div>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-[#2d3d35]">
+                <a href="#" class="hover:text-teal transition">Home</a>
+                <a href="#" class="hover:text-teal transition">About</a>
+                <a href="#" class="hover:text-teal transition">Services</a>
+                <a href="#" class="hover:text-teal transition">Projects</a>
+                <a href="#" class="hover:text-teal transition">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== HERO BANNER ========== -->
+    <section class="gradient-overlay text-white section-padding relative overflow-hidden">
+        <div class="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-white/20 text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Reclaim. Reuse. Restore.</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold leading-tight">Water Reuse &amp; <br />Sustainability</h1>
+                <p class="mt-4 text-lg text-white/80 max-w-lg">Closing the loop through advanced recycling, ZLD, and resource recovery—transforming waste streams into sustainable water resources.</p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#" class="bg-white text-teal px-8 py-3 rounded-full font-semibold hover:bg-[#eaf5f1] transition">Explore Solutions</a>
+                    <a href="#" class="border border-white/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Contact Us</a>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl">🔄</div>
+                            <div class="text-sm mt-1">Water Recycling</div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl">♻️</div>
+                            <div class="text-sm mt-1">ZLD Systems</div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl">🌱</div>
+                            <div class="text-sm mt-1">Resource Recovery</div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center">
+                            <div class="text-3xl">📊</div>
+                            <div class="text-sm mt-1">ESG Alignment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute -top-16 -right-16 w-64 h-64 bg-teal/10 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- ========== OVERVIEW ========== -->
+    <section class="section-padding bg-warm">
+        <div class="container grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-teal text-sm font-semibold tracking-widest uppercase">Overview</span>
+                <h2 class="text-3xl md:text-4xl font-display font-semibold mt-2">Every Drop Counts</h2>
+                <p class="mt-4 text-[#3d4d44] leading-relaxed">We believe every drop can be reclaimed. Our philosophy centers on closing the loop in water management by converting waste streams into sustainable water resources. Through innovative integration of treatment, polishing, and recycling systems, we help clients minimize freshwater dependency and achieve water circularity.</p>
+                <p class="mt-4 text-[#3d4d44] leading-relaxed">Our reclaim and reuse systems include UF, RO, MBR, disinfection, and nutrient polishing to produce high-quality treated water for cooling towers, process water, flushing, and irrigation. By restoring water quality and reintroducing it into the value chain, we empower industries, institutions, and cities to meet sustainability goals.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-2xl card-shadow border border-[#e4e0da]">
+                    <div class="text-3xl">💧</div>
+                    <h4 class="font-display font-semibold mt-2">Water Reuse</h4>
+                    <p class="text-sm text-[#5a6b61]">Tertiary treatment, UF/RO polishing for non-potable uses.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl card-shadow border border-[#e4e0da] mt-6">
+                    <div class="text-3xl">⚡</div>
+                    <h4 class="font-display font-semibold mt-2">Energy Recovery</h4>
+                    <p class="text-sm text-[#5a6b61]">Optimized hydraulic design, reduced energy consumption.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl card-shadow border border-[#e4e0da] -mt-4">
+                    <div class="text-3xl">🧪</div>
+                    <h4 class="font-display font-semibold mt-2">Resource Recovery</h4>
+                    <p class="text-sm text-[#5a6b61]">Salt, nutrient, and by-product recovery for circular economy.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl card-shadow border border-[#e4e0da]">
+                    <div class="text-3xl">🌍</div>
+                    <h4 class="font-display font-semibold mt-2">ESG Compliance</h4>
+                    <p class="text-sm text-[#5a6b61]">Align with sustainability benchmarks and carbon reduction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES / TECHNOLOGIES ========== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-teal text-sm font-semibold tracking-widest uppercase">Technologies</span>
+                <h2 class="text-3xl md:text-4xl font-display font-semibold mt-2">Integrated Recovery Systems</h2>
+                <p class="mt-3 text-[#3d4d44]">Advanced membrane, thermal, and biological processes for maximum water reclamation and resource recovery.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white p-8 rounded-3xl card-shadow border border-[#e4e0da] hover:shadow-xl transition">
+                    <div class="feature-icon">♻️</div>
+                    <h3 class="text-xl font-display font-semibold">Zero Liquid Discharge</h3>
+                    <p class="text-sm text-[#5a6b61] mt-2">Multi-effect evaporators, ATFD, crystallizers, and dryers for complete water recovery and salt reuse.</p>
+                    <ul class="mt-4 space-y-1 text-sm">
+                        <li class="flex items-center gap-2">✓ 99% water recovery</li>
+                        <li class="flex items-center gap-2">✓ Salt &amp; byproduct recovery</li>
+                        <li class="flex items-center gap-2">✓ Circular economy</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-3xl card-shadow border border-[#e4e0da] hover:shadow-xl transition">
+                    <div class="feature-icon">💧</div>
+                    <h3 class="text-xl font-display font-semibold">Water Reuse &amp; Recycling</h3>
+                    <p class="text-sm text-[#5a6b61] mt-2">Tertiary treatment, UF/RO polishing, and disinfection for high-quality reuse water.</p>
+                    <ul class="mt-4 space-y-1 text-sm">
+                        <li class="flex items-center gap-2">✓ Cooling tower makeup</li>
+                        <li class="flex items-center gap-2">✓ Process water reuse</li>
+                        <li class="flex items-center gap-2">✓ Flushing &amp; irrigation</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-3xl card-shadow border border-[#e4e0da] hover:shadow-xl transition">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="text-xl font-display font-semibold">Resource Recovery</h3>
+                    <p class="text-sm text-[#5a6b61] mt-2">Nutrient recovery, sludge valorization, and by-product utilization for circular value creation.</p>
+                    <ul class="mt-4 space-y-1 text-sm">
+                        <li class="flex items-center gap-2">✓ Nutrient (N/P) recovery</li>
+                        <li class="flex items-center gap-2">✓ Biogas &amp; compost</li>
+                        <li class="flex items-center gap-2">✓ Reduced disposal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== APPLICATIONS ========== -->
+    <section class="section-padding bg-mint-light">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-teal text-sm font-semibold tracking-widest uppercase">Applications</span>
+                <h2 class="text-3xl md:text-4xl font-display font-semibold mt-2">Where We Make an Impact</h2>
+                <p class="mt-3 text-[#3d4d44]">From industrial parks to resorts, our reuse and sustainability solutions are deployed globally.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                <div class="bg-white p-6 rounded-2xl text-center card-shadow border border-[#e4e0da]">
+                    <div class="text-4xl mb-2">🏭</div>
+                    <h4 class="font-display font-semibold">Industrial Parks</h4>
+                    <p class="text-sm text-[#5a6b61]">Shared ZLD and reuse infrastructure.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center card-shadow border border-[#e4e0da]">
+                    <div class="text-4xl mb-2">🏙️</div>
+                    <h4 class="font-display font-semibold">Smart Cities</h4>
+                    <p class="text-sm text-[#5a6b61]">Integrated water recycling and stormwater management.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center card-shadow border border-[#e4e0da]">
+                    <div class="text-4xl mb-2">🏖️</div>
+                    <h4 class="font-display font-semibold">Resorts &amp; Islands</h4>
+                    <p class="text-sm text-[#5a6b61]">SWRO + reuse for luxury resorts.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center card-shadow border border-[#e4e0da]">
+                    <div class="text-4xl mb-2">🛢️</div>
+                    <h4 class="font-display font-semibold">Oil &amp; Gas</h4>
+                    <p class="text-sm text-[#5a6b61]">Produced water treatment and reuse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section class="section-padding">
+        <div class="container grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-teal text-sm font-semibold tracking-widest uppercase">Benefits</span>
+                <h2 class="text-3xl md:text-4xl font-display font-semibold mt-2">Why SIEC Water</h2>
+                <ul class="mt-6 space-y-4">
+                    <li class="flex gap-3"><span class="text-teal text-xl">✓</span><span><strong>Circular Water Management</strong> — Closed-loop systems minimize freshwater dependency.</span></li>
+                    <li class="flex gap-3"><span class="text-teal text-xl">✓</span><span><strong>Regulatory Compliance</strong> — Meet discharge norms and ESG objectives.</span></li>
+                    <li class="flex gap-3"><span class="text-teal text-xl">✓</span><span><strong>Cost Reduction</strong> — Lower freshwater intake and disposal costs.</span></li>
+                    <li class="flex gap-3"><span class="text-teal text-xl">✓</span><span><strong>Resource Efficiency</strong> — Recover water, nutrients, and valuable byproducts.</span></li>
+                    <li class="flex gap-3"><span class="text-teal text-xl">✓</span><span><strong>Future-Ready Design</strong> — Scalable systems for evolving needs.</span></li>
+                </ul>
+            </div>
+            <div class="bg-warm p-8 rounded-3xl card-shadow border border-[#e4e0da]">
+                <h3 class="font-display text-2xl font-semibold">Global Impact</h3>
+                <p class="text-sm text-[#5a6b61] mt-2">Our ZLD and reuse projects have helped clients achieve up to 99% water recovery, significantly reducing environmental footprint and operational costs.</p>
+                <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                    <div class="bg-white p-3 rounded-xl text-center">♻️ NMDC ZLD (6 MLD)</div>
+                    <div class="bg-white p-3 rounded-xl text-center">🏭 SATS WWTP-ZLD</div>
+                    <div class="bg-white p-3 rounded-xl text-center">🧪 Dorf Ketal ZLD</div>
+                    <div class="bg-white p-3 rounded-xl text-center">🌏 Tangguh Expansion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="gradient-overlay text-white section-padding text-center">
+        <div class="container max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-display font-semibold">Ready to Close the Loop?</h2>
+            <p class="mt-4 text-white/80">Let's build a sustainable water future together. Contact SIEC Water for reuse, ZLD, and resource recovery solutions.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <a href="#" class="bg-white text-teal px-10 py-3 rounded-full font-semibold hover:bg-[#eaf5f1] transition">Get in Touch</a>
+                <a href="#" class="border border-white/60 px-10 py-3 rounded-full font-semibold hover:bg-white/10 transition">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-[#1a2a23] text-white/70 py-12 border-t border-white/5">
+        <div class="container grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-display font-bold text-white">SIEC<span class="text-[#8ba39c]">Water</span></div>
+                <p class="text-sm mt-2">Treat. Transform. Sustain.</p>
+                <p class="text-sm mt-4">Office 401, Sanskriti Arcade, Wakad, Pune, India</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold">Solutions</h4>
+                <ul class="mt-3 space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Water Treatment</a></li>
+                    <li><a href="#" class="hover:text-white">Wastewater Treatment</a></li>
+                    <li><a href="#" class="hover:text-white">Water Reuse &amp; Sustainability</a></li>
+                    <li><a href="#" class="hover:text-white">Digital &amp; Smart Water</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold">Services</h4>
+                <ul class="mt-3 space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">EPC Solutions</a></li>
+                    <li><a href="#" class="hover:text-white">Engineering Consultancy</a></li>
+                    <li><a href="#" class="hover:text-white">Design &amp; Build</a></li>
+                    <li><a href="#" class="hover:text-white">Commissioning</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold">Contact</h4>
+                <ul class="mt-3 space-y-2 text-sm">
+                    <li>📞 +91 8009924800</li>
+                    <li>✉️ marketing@sienvconsult.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container border-t border-white/10 mt-8 pt-6 text-center text-sm">
+            &copy; 2025 SIEC Water. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
